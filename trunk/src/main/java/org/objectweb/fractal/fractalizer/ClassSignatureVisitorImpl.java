@@ -4,13 +4,18 @@
 package org.objectweb.fractal.fractalizer;
 
 import org.objectweb.fractal.fractalizer.graph.ComponentGraph;
+import org.objectweb.fractal.fractalizer.graph.ComponentGraphImpl;
 
 
 
 public class ClassSignatureVisitorImpl implements ClassSignatureVisitor
 {
   
+  private ComponentGraph componentGraph;
+
   public ClassSignatureVisitorImpl() {
+   
+    this.componentGraph = new ComponentGraphImpl();
     
   }
   
@@ -32,8 +37,7 @@ public class ClassSignatureVisitorImpl implements ClassSignatureVisitor
    */
   public ComponentGraph getComponentGraph()
   {
-    // TODO Auto-generated method stub
-    return null;
+    return this.componentGraph;
   }
 
 }
