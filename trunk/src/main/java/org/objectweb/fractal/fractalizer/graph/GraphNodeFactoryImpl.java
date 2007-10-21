@@ -8,20 +8,20 @@ public class GraphNodeFactoryImpl implements GraphNodeFactory
 {
 
   /**
-   * @see org.objectweb.fractal.fractalizer.graph.GraphNodeFactory#createPrimitiveComponentNode()
+   * @see org.objectweb.fractal.fractalizer.graph.GraphNodeFactory#createUnnamedPrimitiveComponentNode()
    */
-  public PrimitiveComponentNode createPrimitiveComponentNode(String impl)
+  public PrimitiveComponentNode createPrimitiveComponentNodeForImplName(String impl)
   {
     return new PrimitiveComponentNodeImpl(impl);
   }
 
   /**
-   * @see org.objectweb.fractal.fractalizer.graph.GraphNodeFactory#createPrimitiveComponentNode()
+   * @see org.objectweb.fractal.fractalizer.graph.GraphNodeFactory#createUnnamedPrimitiveComponentNode()
    */
-  public PrimitiveComponentNode createPrimitiveComponentNode()
+  public PrimitiveComponentNode createUnnamedPrimitiveComponentNode()
   {
    
-    return createPrimitiveComponentNode("unnamed");
+    return createPrimitiveComponentNodeForImplName("unnamed");
   }
 
 }

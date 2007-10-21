@@ -43,4 +43,11 @@ public class InterfaceNodeImpl implements InterfaceNode {
 		return this.signature;
 	}
 
+
+  @Override
+  public String toString()
+  {
+    return "InterfaceNode ["+name+","+signature+"]";
+  }
+
 }

@@ -29,21 +29,21 @@ public class GraphNodeFactoryImplTest
   }
 
   /**
-   * Test method for {@link org.objectweb.fractal.fractalizer.graph.GraphNodeFactoryImpl#createPrimitiveComponentNode(java.lang.String)}.
+   * Test method for {@link org.objectweb.fractal.fractalizer.graph.GraphNodeFactoryImpl#createPrimitiveComponentNodeForImplName(java.lang.String)}.
    */
   @Test
   public void testCreatePrimitiveComponentNodeString()
   {
-   assertNotNull(factory.createPrimitiveComponentNode("foo"));
+   assertNotNull(factory.createPrimitiveComponentNodeForImplName("foo"));
   }
 
   /**
-   * Test method for {@link org.objectweb.fractal.fractalizer.graph.GraphNodeFactoryImpl#createPrimitiveComponentNode()}.
+   * Test method for {@link org.objectweb.fractal.fractalizer.graph.GraphNodeFactoryImpl#createUnnamedPrimitiveComponentNode()}.
    */
   @Test
   public void testCreatePrimitiveComponentNode()
   {
-    assertNotNull(factory.createPrimitiveComponentNode());
+    assertNotNull(factory.createUnnamedPrimitiveComponentNode());
   }
 
 }
