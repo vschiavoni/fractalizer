@@ -4,10 +4,11 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 import org.objectweb.fractal.fractalizer.graph.ComponentGraph;
+import org.objectweb.fractal.fractalizer.graph.ComponentNotFoundException;
 import org.objectweb.fractal.fractalizer.graph.PrimitiveComponentNode;
 
 /**
- * Author: Valerio Schiavoni <valerio.schiavoni@gmail.com>
+ * Tests for the {@link ClassSignatureVisitorImpl} visitor.
  */
 
 
@@ -39,6 +40,18 @@ public class ClassSignatureVisitorTest
     
     assertEquals(1,graph.getPrimitiveComponentNodes().size());
     
+    try
+    {
+      PrimitiveComponentNode primitive = graph.getPrimitiveComponentNodeByImplementation(Client.class.getCanonicalName());
+      
+      assertNotNull("the primitive comp should not be null",primitive);
+      
+      assertEquals(Client.class.getCanonicalName(), primitive.getPrimitiveImplementation());
+    }
+    catch (ComponentNotFoundException e)
+    {
+     fail("Primitive component for class "+Client.class.toString()+ " was not found");
+    }
     
   }
 
