@@ -32,7 +32,7 @@ public class PrimitiveComponentNodeImpl implements PrimitiveComponentNode {
 	 * @see org.objectweb.fractal.fractalizer.graph.PrimitiveComponentNode#getInterfaces()
 	 */
 	public Set<InterfaceNode> getInterfaces() {
-		return this.getInterfaces();
+		return this.interfaces;
 	}
 
 	/* (non-Javadoc)
