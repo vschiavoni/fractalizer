@@ -9,7 +9,7 @@ package org.objectweb.fractal.fractalizer.graph;
  */
 public interface GraphNodeFactory
 {
-  PrimitiveComponentNode createPrimitiveComponentNode();
+  PrimitiveComponentNode createUnnamedPrimitiveComponentNode();
   
-  PrimitiveComponentNode createPrimitiveComponentNode(String impl);
+  PrimitiveComponentNode createPrimitiveComponentNodeForImplName(String impl);
 }
