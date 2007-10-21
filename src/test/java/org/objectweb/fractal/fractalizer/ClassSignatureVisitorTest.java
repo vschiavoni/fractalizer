@@ -1,3 +1,4 @@
+package org.objectweb.fractal.fractalizer;
 import static org.junit.Assert.*;
 
 import org.junit.Before;
