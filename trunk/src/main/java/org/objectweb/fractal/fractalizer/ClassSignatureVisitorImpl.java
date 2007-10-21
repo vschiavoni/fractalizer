@@ -3,14 +3,16 @@
  */
 package org.objectweb.fractal.fractalizer;
 
+import org.objectweb.fractal.fractalizer.graph.ComponentGraph;
 
-/**
- * @author Valerio Schiavoni <valerio.schiavoni@gmail.com>
- *
- */
+
+
 public class ClassSignatureVisitorImpl implements ClassSignatureVisitor
 {
   
+  public ClassSignatureVisitorImpl() {
+    
+  }
   
   /**
    * @see org.objectweb.fractal.fractalizer.ClassSignatureVisitor#visit(java.lang.Class)
@@ -19,6 +21,19 @@ public class ClassSignatureVisitorImpl implements ClassSignatureVisitor
   {
     // TODO Auto-generated method stub
 
+  }
+  
+  public void visit(Class<?>[] clazzes) {
+    
+  }
+
+  /**
+   * @see org.objectweb.fractal.fractalizer.ClassSignatureVisitor#getComponentGraph()
+   */
+  public ComponentGraph getComponentGraph()
+  {
+    // TODO Auto-generated method stub
+    return null;
   }
 
 }

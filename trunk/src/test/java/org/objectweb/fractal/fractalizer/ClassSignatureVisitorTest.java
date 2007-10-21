@@ -3,6 +3,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.objectweb.fractal.fractalizer.graph.ComponentGraph;
 
 /**
  * Author: Valerio Schiavoni <valerio.schiavoni@gmail.com>
@@ -11,13 +12,16 @@ import org.junit.Test;
 
 public class ClassSignatureVisitorTest
 {
-
+  
+  ClassSignatureVisitor visitor;
+  
   /**
    * @throws java.lang.Exception
    */
   @Before
   public void setUp() throws Exception
   {
+    this.visitor = new ClassSignatureVisitorImpl();
   }
 
   /**
@@ -26,7 +30,13 @@ public class ClassSignatureVisitorTest
   @Test
   public void testVisit()
   {
-    fail("Not yet implemented");
+    visitor.visit(Client.class);
+    
+    ComponentGraph graph =  visitor.getComponentGraph();
+    
+    assertNotNull("The component graph should not be null",graph);
+    
+    assertEquals(1,graph.getPrimitiveComponentNodes().size());
   }
 
 }
