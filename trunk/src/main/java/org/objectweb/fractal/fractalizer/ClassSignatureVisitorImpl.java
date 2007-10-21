@@ -31,7 +31,7 @@ public class ClassSignatureVisitorImpl implements ClassSignatureVisitor
   public void visit(Class<?> clazz)
   {
     
-    PrimitiveComponentNode primitive = factory.createPrimitiveComponentNode();
+    PrimitiveComponentNode primitive = factory.createPrimitiveComponentNode(clazz.getCanonicalName());
     
     //enrich the node
     
