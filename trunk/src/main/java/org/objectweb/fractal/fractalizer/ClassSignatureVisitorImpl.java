@@ -5,6 +5,9 @@ package org.objectweb.fractal.fractalizer;
 
 import org.objectweb.fractal.fractalizer.graph.ComponentGraph;
 import org.objectweb.fractal.fractalizer.graph.ComponentGraphImpl;
+import org.objectweb.fractal.fractalizer.graph.GraphNodeFactory;
+import org.objectweb.fractal.fractalizer.graph.GraphNodeFactoryImpl;
+import org.objectweb.fractal.fractalizer.graph.PrimitiveComponentNode;
 
 
 
@@ -12,10 +15,13 @@ public class ClassSignatureVisitorImpl implements ClassSignatureVisitor
 {
   
   private ComponentGraph componentGraph;
+  private GraphNodeFactory factory;
 
   public ClassSignatureVisitorImpl() {
    
     this.componentGraph = new ComponentGraphImpl();
+    
+    this.factory = new GraphNodeFactoryImpl();
     
   }
   
@@ -24,7 +30,12 @@ public class ClassSignatureVisitorImpl implements ClassSignatureVisitor
    */
   public void visit(Class<?> clazz)
   {
-    // TODO Auto-generated method stub
+    
+    PrimitiveComponentNode primitive = factory.createPrimitiveComponentNode();
+    
+    //enrich the node
+    
+    this.componentGraph.addPrimitiveComponentNode(primitive);
 
   }
   

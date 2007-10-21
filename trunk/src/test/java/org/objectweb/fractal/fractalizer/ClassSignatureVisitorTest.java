@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 import org.objectweb.fractal.fractalizer.graph.ComponentGraph;
+import org.objectweb.fractal.fractalizer.graph.PrimitiveComponentNode;
 
 /**
  * Author: Valerio Schiavoni <valerio.schiavoni@gmail.com>
@@ -37,6 +38,8 @@ public class ClassSignatureVisitorTest
     assertNotNull("The component graph should not be null",graph);
     
     assertEquals(1,graph.getPrimitiveComponentNodes().size());
+    
+    
   }
 
 }
