@@ -6,7 +6,7 @@ import org.objectweb.fractal.fractalizer.graph.ComponentGraph;
 /**
  * Inspect  a class signature
  */
-public interface ClassSignatureVisitor
+public interface ClassVisitor
 {
   
   public void visit(Class<?> clazz);
