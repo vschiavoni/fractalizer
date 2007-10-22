@@ -1,52 +1,79 @@
 /**
  * 
  */
+
 package org.objectweb.fractal.fractalizer.graph;
 
 import java.util.HashSet;
 import java.util.Set;
 
 /**
- * @author Alessio Pace
- *
+ * @author Alessio Pace, Valerio Schiavoni
  */
-public class PrimitiveComponentNodeImpl implements PrimitiveComponentNode {
+public class PrimitiveComponentNodeImpl implements PrimitiveComponentNode
+{
 
-	private Set<InterfaceNode> interfaces;
-	private String implementation;
-	
-	public PrimitiveComponentNodeImpl(String implementation) {
-		this.implementation = implementation;
-		this.interfaces = new HashSet<InterfaceNode>();
-	}
+  private Set<InterfaceNode> serverInterfaces;
+  private Set<InterfaceNode> clientInterfaces;
 
-	/* (non-Javadoc)
-	 * @see org.objectweb.fractal.fractalizer.graph.PrimitiveComponentNode#addInterface(org.objectweb.fractal.fractalizer.graph.InterfaceNode)
-	 */
-	public void addInterface(InterfaceNode interfaceNode) {
-		this.interfaces.add(interfaceNode);
-		
-	}
+  private String             implementation;
 
-	/* (non-Javadoc)
-	 * @see org.objectweb.fractal.fractalizer.graph.PrimitiveComponentNode#getInterfaces()
-	 */
-	public Set<InterfaceNode> getInterfaces() {
-		return this.interfaces;
-	}
+  public PrimitiveComponentNodeImpl(String implementation)
+  {
+    this.implementation = implementation;
+    this.serverInterfaces = new HashSet<InterfaceNode>();
+    this.clientInterfaces = new HashSet<InterfaceNode>();
+  }
 
-	/* (non-Javadoc)
-	 * @see org.objectweb.fractal.fractalizer.graph.PrimitiveComponentNode#getPrimitiveImplementation()
-	 */
-	public String getPrimitiveImplementation() {
-		return this.implementation;
-	}
+  /*
+   * (non-Javadoc)
+   * 
+   * @see org.objectweb.fractal.fractalizer.graph.PrimitiveComponentNode#addInterface(org.objectweb.fractal.fractalizer.graph.InterfaceNode)
+   */
+  public void addServerInterface(InterfaceNode interfaceNode)
+  {
+    this.serverInterfaces.add(interfaceNode);
 
-	/* (non-Javadoc)
-	 * @see org.objectweb.fractal.fractalizer.graph.PrimitiveComponentNode#setPrimitiveImplementation(java.lang.String)
-	 */
-	public void setPrimitiveImplementation(String implementation) {
-		this.implementation = implementation;
-	}
+  }
 
+  /*
+   * (non-Javadoc)
+   * 
+   * @see org.objectweb.fractal.fractalizer.graph.PrimitiveComponentNode#getInterfaces()
+   */
+  public Set<InterfaceNode> getServerInterfaces()
+  {
+    return this.serverInterfaces;
+  }
+
+  /*
+   * (non-Javadoc)
+   * 
+   * @see org.objectweb.fractal.fractalizer.graph.PrimitiveComponentNode#getPrimitiveImplementation()
+   */
+  public String getPrimitiveImplementation()
+  {
+    return this.implementation;
+  }
+
+  /*
+   * (non-Javadoc)
+   * 
+   * @see org.objectweb.fractal.fractalizer.graph.PrimitiveComponentNode#setPrimitiveImplementation(java.lang.String)
+   */
+  public void setPrimitiveImplementation(String implementation)
+  {
+    this.implementation = implementation;
+  }
+
+  public Set<InterfaceNode> getClientInterfaces()
+  {
+    return clientInterfaces;
+  }
+
+  public void addClientInterface(InterfaceNode interfaceNode)
+  {
+    this.clientInterfaces.add(interfaceNode);
+
+  }
 }

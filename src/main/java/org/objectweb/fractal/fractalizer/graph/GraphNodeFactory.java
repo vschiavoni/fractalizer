@@ -12,4 +12,6 @@ public interface GraphNodeFactory
   PrimitiveComponentNode createUnnamedPrimitiveComponentNode();
   
   PrimitiveComponentNode createPrimitiveComponentNodeForImplName(String impl);
+  
+  BindingNode createBindingNode(String from);
 }

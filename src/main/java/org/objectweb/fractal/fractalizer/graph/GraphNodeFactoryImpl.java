@@ -24,4 +24,18 @@ public class GraphNodeFactoryImpl implements GraphNodeFactory
     return createPrimitiveComponentNodeForImplName("unnamed");
   }
 
+  /**
+   * @see org.objectweb.fractal.fractalizer.graph.GraphNodeFactory#createBindingNode(java.lang.String)
+   */
+  public BindingNode createBindingNode(String from)
+  {
+   
+    
+   BindingNode bn = new BindingNodeImpl();
+   
+   
+   
+   return bn;
+  }
+
 }
