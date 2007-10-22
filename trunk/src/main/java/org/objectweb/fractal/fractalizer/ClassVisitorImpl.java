@@ -19,15 +19,15 @@ import org.objectweb.fractal.fractalizer.graph.PrimitiveComponentNode;
  * @author Valerio Schiavoni <valerio.schiavoni@gmail.com>
  *
  */
-public class ClassSignatureVisitorImpl implements ClassSignatureVisitor
+public class ClassVisitorImpl implements ClassVisitor
 {
   
-  Logger log = Logger.getLogger(ClassSignatureVisitorImpl.class.getCanonicalName());
+  Logger log = Logger.getLogger(ClassVisitorImpl.class.getCanonicalName());
   
   private ComponentGraph componentGraph;
   private GraphNodeFactory factory;
 
-  public ClassSignatureVisitorImpl() {
+  public ClassVisitorImpl() {
    
     this.componentGraph = new ComponentGraphImpl();
     
@@ -36,7 +36,7 @@ public class ClassSignatureVisitorImpl implements ClassSignatureVisitor
   }
   
   /**
-   * @see org.objectweb.fractal.fractalizer.ClassSignatureVisitor#visit(java.lang.Class)
+   * @see org.objectweb.fractal.fractalizer.ClassVisitor#visit(java.lang.Class)
    */
   public void visit(Class<?> clazz)
   {
@@ -79,7 +79,7 @@ public class ClassSignatureVisitorImpl implements ClassSignatureVisitor
   }
 
   /**
-   * @see org.objectweb.fractal.fractalizer.ClassSignatureVisitor#getComponentGraph()
+   * @see org.objectweb.fractal.fractalizer.ClassVisitor#getComponentGraph()
    */
   public ComponentGraph getComponentGraph()
   {
