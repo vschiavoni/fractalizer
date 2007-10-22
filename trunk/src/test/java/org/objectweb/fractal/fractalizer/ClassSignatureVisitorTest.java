@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 
 import java.util.Set;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.objectweb.fractal.fractalizer.graph.ComponentGraph;
@@ -35,7 +36,7 @@ public class ClassSignatureVisitorTest
    * {@link org.objectweb.fractal.fractalizer.ClassSignatureVisitorImpl#visit(java.lang.Class)}.
    */
   @Test
-  public void testVisit()
+  public void testVisitClient()
   {
     visitor.visit(Client.class);
 
@@ -43,7 +44,7 @@ public class ClassSignatureVisitorTest
 
     assertNotNull("The component graph should not be null", graph);
 
-    assertEquals(1, graph.getPrimitiveComponentNodes().size());
+    checkTotalNodesInGraph(graph, 1);
 
     try
     {
@@ -51,17 +52,18 @@ public class ClassSignatureVisitorTest
           .getPrimitiveComponentNodeByImplementation(Client.class
               .getCanonicalName());
 
-      assertNotNull("the primitive comp should not be null", primitive);
+      checkNotNull(primitive);
 
-      assertEquals(Client.class.getCanonicalName(), primitive
-          .getPrimitiveImplementation());
+      checkImplementation(primitive, Client.class.getCanonicalName());
 
-      final Set<InterfaceNode> interfaces = primitive.getInterfaces();
+      final Set<InterfaceNode> serverItfs = primitive.getServerInterfaces();
 
-      assertNotNull(interfaces);
-
-      assertEquals("Client exposes 'Runnable' as server interfaces ", 1,
-          interfaces.size());
+      checkServerInterfaces(serverItfs, 1);
+      
+      final Set<InterfaceNode>  clientItfs = primitive.getClientInterfaces();
+      
+      checkClientInterfaces(clientItfs,1);
+     
 
     }
     catch (ComponentNotFoundException e)
@@ -70,6 +72,102 @@ public class ClassSignatureVisitorTest
           + " was not found");
     }
 
+  }
+  
+  @Test
+  public void testVisitServiceImpl() {
+    
+    visitor.visit(ServiceImpl.class);
+
+    ComponentGraph graph = visitor.getComponentGraph();
+    
+    
+
+    checkTotalNodesInGraph(graph, 1);
+  }
+  
+  @Test
+  public void testVisitClassesOneAfterAnother()
+  {
+    visitor.visit(Service.class);
+    visitor.visit(ServiceImpl.class);
+    ComponentGraph graph = visitor.getComponentGraph();
+    checkTotalNodesInGraph(graph, 2);
+  }
+
+  @Test
+  public void testVisitClassesInArray()
+  {
+    visitor.visit(new Class[]{Service.class, ServiceImpl.class});
+
+    ComponentGraph graph = visitor.getComponentGraph();
+    checkTotalNodesInGraph(graph, 2);
+  }
+  
+  @Test
+  public void testVisitTwiceSameClass()
+  {
+    visitor.visit(Service.class);
+    visitor.visit(Service.class);
+    ComponentGraph graph = visitor.getComponentGraph();
+    checkTotalNodesInGraph(graph, 1);
+  }
+  
+  /**
+   * @param graph
+   * @param expected TODO
+   */
+  private void checkTotalNodesInGraph(ComponentGraph graph, int expected)
+  {
+    assertNotNull("The component graph should not be null", graph);
+    assertEquals(expected, graph.getPrimitiveComponentNodes().size());
+  }
+  
+  
+
+  /**
+   * @param clientItfs
+   * @param expected
+   */
+  private void checkClientInterfaces(Set<InterfaceNode> clientItfs, int expected)
+  {
+    assertNotNull(clientItfs);
+    assertEquals(expected, clientItfs.size());
+  }
+
+  /**
+   * @param serverItfs
+   * @param expected TODO
+   */
+  private void checkServerInterfaces(final Set<InterfaceNode> serverItfs,
+      int expected)
+  {
+    assertNotNull(serverItfs);
+    assertEquals(expected, serverItfs.size());
+  }
+
+  /**
+   * @param primitive
+   * @param expected TODO
+   */
+  private void checkImplementation(PrimitiveComponentNode primitive,
+      String expected)
+  {
+    assertEquals(expected, primitive.getPrimitiveImplementation());
+  }
+
+  /**
+   * @param primitive
+   */
+  private void checkNotNull(PrimitiveComponentNode primitive)
+  {
+    assertNotNull("the primitive comp should not be null", primitive);
+  }
+  
+  @After
+  public void emptyGraphAfterVisit(){
+    visitor.getComponentGraph().empty();
+    assertTrue(visitor.getComponentGraph().getPrimitiveComponentNodes().isEmpty());
   }
 
 }

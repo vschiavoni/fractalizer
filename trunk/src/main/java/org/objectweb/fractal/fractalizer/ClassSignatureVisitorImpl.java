@@ -1,11 +1,10 @@
-/**
- * Author: Valerio Schiavoni <valerio.schiavoni@gmail.com>
- */
+
 package org.objectweb.fractal.fractalizer;
 
 import java.lang.reflect.Field;
 import java.util.logging.Logger;
 
+import org.objectweb.fractal.fractalizer.graph.BindingNode;
 import org.objectweb.fractal.fractalizer.graph.ComponentGraph;
 import org.objectweb.fractal.fractalizer.graph.ComponentGraphImpl;
 import org.objectweb.fractal.fractalizer.graph.GraphNodeFactory;
@@ -14,7 +13,12 @@ import org.objectweb.fractal.fractalizer.graph.InterfaceNodeImpl;
 import org.objectweb.fractal.fractalizer.graph.PrimitiveComponentNode;
 
 
-
+/**
+ * Default impl.
+ * 
+ * @author Valerio Schiavoni <valerio.schiavoni@gmail.com>
+ *
+ */
 public class ClassSignatureVisitorImpl implements ClassSignatureVisitor
 {
   
@@ -39,18 +43,23 @@ public class ClassSignatureVisitorImpl implements ClassSignatureVisitor
     
     PrimitiveComponentNode primitive = factory.createPrimitiveComponentNodeForImplName(clazz.getCanonicalName());
     
-    //enrich the node
     
     for (Class<?> itf: clazz.getInterfaces()) {
       String itfName = itf.getSimpleName();
       String itfSign = itf.getCanonicalName();
-      primitive.addInterface(new InterfaceNodeImpl(primitive,itfName, itfSign ));
+      primitive.addServerInterface(new InterfaceNodeImpl(primitive,itfName, itfSign ));
     }
     
     
     Field[] fields = clazz.getDeclaredFields(); //potential client-interfaces
     for (Field f: fields) {
-      log.info(f.toString());
+      final String clientItfType = f.getType().getCanonicalName();
+      log.info("Field class type: "+clientItfType);
+      final String clientItfName = f.getName();
+      log.info("Field name: "+clientItfName);
+      
+      primitive.addClientInterface(new InterfaceNodeImpl(primitive,clientItfName, clientItfType));
+      
     }
     
     

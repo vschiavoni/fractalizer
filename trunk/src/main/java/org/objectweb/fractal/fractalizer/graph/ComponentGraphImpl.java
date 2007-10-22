@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * @author Alessio Pace
+ * @author Alessio Pace, Valerio Schiavoni
  *
  */
 public class ComponentGraphImpl implements ComponentGraph {
@@ -44,5 +44,14 @@ public class ComponentGraphImpl implements ComponentGraph {
 		return this.components.get(implementation);
 		
 	}
+
+  /**
+   * @see org.objectweb.fractal.fractalizer.graph.ComponentGraph#empty()
+   */
+  public void empty()
+  {
+    this.components.clear();
+    
+  }
 
 }

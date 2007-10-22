@@ -6,7 +6,7 @@ package org.objectweb.fractal.fractalizer.graph;
 import java.util.Set;
 
 /**
- * @author Alessio Pace
+ * @author Alessio Pace, Valerio Schiavoni
  *
  */
 public interface ComponentGraph {
@@ -26,4 +26,9 @@ public interface ComponentGraph {
 	 * @return
 	 */
 	PrimitiveComponentNode getPrimitiveComponentNodeByImplementation(String implementation) throws ComponentNotFoundException;
+
+  /**
+   * Empty the graph
+   */
+  void empty();
 }
