@@ -14,13 +14,13 @@ import org.objectweb.fractal.fractalizer.graph.InterfaceNode;
 import org.objectweb.fractal.fractalizer.graph.PrimitiveComponentNode;
 
 /**
- * Tests for the {@link ClassSignatureVisitorImpl} visitor.
+ * Tests for the {@link ClassVisitorImpl} visitor.
  */
 
-public class ClassSignatureVisitorTest
+public class ClassVisitorTest
 {
 
-  ClassSignatureVisitor visitor;
+  ClassVisitor visitor;
 
   /**
    * @throws java.lang.Exception
@@ -28,12 +28,12 @@ public class ClassSignatureVisitorTest
   @Before
   public void setUp() throws Exception
   {
-    this.visitor = new ClassSignatureVisitorImpl();
+    this.visitor = new ClassVisitorImpl();
   }
 
   /**
    * Test method for
-   * {@link org.objectweb.fractal.fractalizer.ClassSignatureVisitorImpl#visit(java.lang.Class)}.
+   * {@link org.objectweb.fractal.fractalizer.ClassVisitorImpl#visit(java.lang.Class)}.
    */
   @Test
   public void testVisitClient()
@@ -56,13 +56,9 @@ public class ClassSignatureVisitorTest
 
       checkImplementation(primitive, Client.class.getCanonicalName());
 
-      final Set<InterfaceNode> serverItfs = primitive.getServerInterfaces();
-
-      checkServerInterfaces(serverItfs, 1);
+      checkServerInterfaces(primitive.getServerInterfaces(), 1);
       
-      final Set<InterfaceNode>  clientItfs = primitive.getClientInterfaces();
-      
-      checkClientInterfaces(clientItfs,1);
+      checkClientInterfaces( primitive.getClientInterfaces(),1);
      
 
     }
@@ -81,9 +77,30 @@ public class ClassSignatureVisitorTest
 
     ComponentGraph graph = visitor.getComponentGraph();
     
-    
-
     checkTotalNodesInGraph(graph, 1);
+    
+    try
+    {
+      PrimitiveComponentNode primitive = graph
+          .getPrimitiveComponentNodeByImplementation(ServiceImpl.class
+              .getCanonicalName());
+
+      checkNotNull(primitive);
+
+      checkImplementation(primitive, ServiceImpl.class.getCanonicalName());
+
+      checkServerInterfaces(primitive.getServerInterfaces(), 1);
+      
+      checkClientInterfaces( primitive.getClientInterfaces(),0);
+     
+
+    }
+    catch (ComponentNotFoundException e)
+    {
+      fail("Primitive component for class " + ServiceImpl.class.toString()
+          + " was not found");
+    }
+    
   }
   
   @Test
