@@ -1,7 +1,8 @@
 /**
  * 
  */
-package org.objectweb.fractal.fractalizer;
+package org.objectweb.fractal.fractalizer.fixtures;
+
 
 /**
  * @author Alessio Pace
