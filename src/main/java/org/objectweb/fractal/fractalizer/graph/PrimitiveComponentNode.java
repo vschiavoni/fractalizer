@@ -9,7 +9,7 @@ import java.util.Set;
 /**
  * @author Alessio Pace, Valerio Schiavoni
  */
-public interface PrimitiveComponentNode
+public interface PrimitiveComponentNode extends Visitable
 {
 
   String getPrimitiveImplementation();
