@@ -7,6 +7,8 @@ package org.objectweb.fractal.fractalizer.graph;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.objectweb.fractal.fractalizer.ADLWriterGraphVisitor;
+
 /**
  * @author Alessio Pace, Valerio Schiavoni
  */
@@ -75,5 +77,15 @@ public class PrimitiveComponentNodeImpl implements PrimitiveComponentNode
   {
     this.clientInterfaces.add(interfaceNode);
 
+  }
+
+  /**
+   * @see org.objectweb.fractal.fractalizer.graph.Visitable#accept(org.objectweb.fractal.fractalizer.ADLWriterGraphVisitor)
+   */
+  public void accept(ADLWriterGraphVisitor v)
+  {
+    
+    v.accept(this);
+    
   }
 }

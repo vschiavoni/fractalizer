@@ -8,11 +8,13 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import org.objectweb.fractal.fractalizer.ADLWriterGraphVisitor;
+
 /**
  * @author Alessio Pace, Valerio Schiavoni
  *
  */
-public class ComponentGraphImpl implements ComponentGraph {
+public class ComponentGraphImpl implements ComponentGraph{
 	
 	private Map<String, PrimitiveComponentNode> components;
 	
@@ -52,6 +54,15 @@ public class ComponentGraphImpl implements ComponentGraph {
   {
     this.components.clear();
     
+  }
+
+  /**
+   * @see org.objectweb.fractal.fractalizer.graph.Visitable#accept(org.objectweb.fractal.fractalizer.ADLWriterGraphVisitor)
+   */
+  public void accept(ADLWriterGraphVisitor v)
+  {
+    v.accept(this);
+
   }
 
 }
