@@ -75,6 +75,7 @@ public class ADLWriterGraphVisitorImpl implements ADLWriterGraphVisitor
       }
 
     builder.append("<content class='"+primitive.getPrimitiveImplementation()+"'/>\n");
+    builder.append("<controller desc='primitive'/>\n");
     builder.append("</component>\n");
   }
 
