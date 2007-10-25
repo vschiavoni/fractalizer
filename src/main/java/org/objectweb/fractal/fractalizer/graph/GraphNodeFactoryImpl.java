@@ -38,4 +38,28 @@ public class GraphNodeFactoryImpl implements GraphNodeFactory
    return bn;
   }
 
+    /**
+     * Create a client interface
+     *
+     * @param owner
+     * @param name
+     * @param signature
+     * @return the created client interface
+     */
+    public InterfaceNode createClientInterface(PrimitiveComponentNode owner, String name, String signature) {
+        return new InterfaceNodeImpl(owner, name, signature, true); 
+    }
+
+    /**
+     * Create a server interface
+     *
+     * @param owner
+     * @param name
+     * @param signature
+     * @return the created server interface
+     */
+    public InterfaceNode createServerInterface(PrimitiveComponentNode owner, String name, String signature) {
+       return new InterfaceNodeImpl(owner, name, signature,false); 
+    }
+
 }

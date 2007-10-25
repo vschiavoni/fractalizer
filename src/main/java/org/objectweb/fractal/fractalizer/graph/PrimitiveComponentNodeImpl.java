@@ -4,10 +4,10 @@
 
 package org.objectweb.fractal.fractalizer.graph;
 
+import org.objectweb.fractal.fractalizer.ADLWriterGraphVisitor;
+
 import java.util.HashSet;
 import java.util.Set;
-
-import org.objectweb.fractal.fractalizer.ADLWriterGraphVisitor;
 
 /**
  * @author Alessio Pace, Valerio Schiavoni

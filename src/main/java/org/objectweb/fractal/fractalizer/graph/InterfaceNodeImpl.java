@@ -3,6 +3,8 @@
  */
 package org.objectweb.fractal.fractalizer.graph;
 
+import org.objectweb.fractal.fractalizer.ADLWriterGraphVisitor;
+
 /**
  * @author Alessio Pace
  *
@@ -35,7 +37,6 @@ public class InterfaceNodeImpl implements InterfaceNode {
         this.owner = owner;
 		this.name = name;
 		this.signature = signature;
-
         this.isClient = isClient;
     }
 
@@ -64,7 +65,7 @@ public class InterfaceNodeImpl implements InterfaceNode {
 	}
 
     public Boolean isClient() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+        return this.isClient;  //To change body of implemented methods use File | Settings | File Templates.
     }
 
 
@@ -74,4 +75,7 @@ public class InterfaceNodeImpl implements InterfaceNode {
     return "InterfaceNode ["+name+","+signature+"]";
   }
 
+    public void accept(ADLWriterGraphVisitor v) {
+        v.accept(this);
+    }
 }

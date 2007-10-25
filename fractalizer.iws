@@ -16,10 +16,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/graph/ComponentGraph.java" afterPath="$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/graph/ComponentGraph.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/graph/ComponentGraphImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/graph/ComponentGraphImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/graph/GraphNodeFactory.java" afterPath="$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/graph/GraphNodeFactory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/org/objectweb/fractal/fractalizer/ADLWriterGraphVisitorTest.java" afterPath="$PROJECT_DIR$/src/test/java/org/objectweb/fractal/fractalizer/ADLWriterGraphVisitorTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fractalizer.iws" afterPath="$PROJECT_DIR$/fractalizer.iws" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/ADLWriterGraphVisitor.java" afterPath="$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/ADLWriterGraphVisitor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/graph/PrimitiveComponentNodeImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/graph/PrimitiveComponentNodeImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/org/objectweb/fractal/fractalizer/GraphNodeFactoryImplTest.java" afterPath="$PROJECT_DIR$/src/test/java/org/objectweb/fractal/fractalizer/GraphNodeFactoryImplTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/graph/InterfaceNode.java" afterPath="$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/graph/InterfaceNode.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/graph/GraphNodeFactoryImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/graph/GraphNodeFactoryImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/graph/InterfaceNodeImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/graph/InterfaceNodeImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/ADLWriterGraphVisitorImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/ADLWriterGraphVisitorImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/org/objectweb/fractal/fractalizer/ClassVisitorTest.java" afterPath="$PROJECT_DIR$/src/test/java/org/objectweb/fractal/fractalizer/ClassVisitorTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/ClassVisitorImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/ClassVisitorImpl.java" />
     </list>
     <ignored path="fractalizer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -218,10 +228,59 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ADLWriterGraphVisitorTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/org/objectweb/fractal/fractalizer/ADLWriterGraphVisitorTest.java">
+      <file leaf-file-name="PrimitiveComponentNodeImpl.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/graph/PrimitiveComponentNodeImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="75" column="38" selection-start="1804" selection-end="1804" vertical-scroll-proportion="1.3490099">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ADLWriterGraphVisitor.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/ADLWriterGraphVisitor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="0" selection-start="460" selection-end="460" vertical-scroll-proportion="0.40095466">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ADLWriterGraphVisitorImpl.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/ADLWriterGraphVisitorImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="52" column="63" selection-start="1647" selection-end="1647" vertical-scroll-proportion="0.77227724">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ComponentGraph.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/graph/ComponentGraph.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="0" selection-start="137" selection-end="137" vertical-scroll-proportion="0.25775656">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ComponentGraphImpl.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/graph/ComponentGraphImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="64" column="8" selection-start="1677" selection-end="1768" vertical-scroll-proportion="1.5445545">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GraphNodeFactoryImplTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/org/objectweb/fractal/fractalizer/GraphNodeFactoryImplTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="35" column="47" selection-start="909" selection-end="909" vertical-scroll-proportion="0.43564355">
               <folding />
             </state>
           </provider>
@@ -230,43 +289,38 @@
       <file leaf-file-name="ClassVisitorTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/org/objectweb/fractal/fractalizer/ClassVisitorTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="61" column="46" selection-start="1569" selection-end="1569" vertical-scroll-proportion="0.5178317">
+            <state line="32" column="34" selection-start="876" selection-end="876" vertical-scroll-proportion="0.3699284">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClassVisitorImpl.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/ClassVisitorImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="43" column="56" selection-start="1076" selection-end="1076" vertical-scroll-proportion="0.50358">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GraphNodeFactory.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/graph/GraphNodeFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="41" column="0" selection-start="992" selection-end="992" vertical-scroll-proportion="0.7422434">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PrimitiveComponentNode.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/graph/PrimitiveComponentNode.java">
+      <file leaf-file-name="GraphNodeFactoryImpl.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/graph/GraphNodeFactoryImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="0" selection-start="297" selection-end="297" vertical-scroll-proportion="0.27389443">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PrimitiveComponentNodeImpl.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/graph/PrimitiveComponentNodeImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="75" column="38" selection-start="1804" selection-end="1804" vertical-scroll-proportion="0.77746075">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InterfaceNode.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/graph/InterfaceNode.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="0" selection-start="153" selection-end="153" vertical-scroll-proportion="0.18830243">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InterfaceNodeImpl.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/graph/InterfaceNodeImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="7" selection-start="654" selection-end="654" vertical-scroll-proportion="0.41084164">
+            <state line="60" column="111" selection-start="1581" selection-end="1581" vertical-scroll-proportion="0.7136038">
               <folding />
             </state>
           </provider>
@@ -427,6 +481,28 @@
           <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/src/main" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="fractalizer" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="fractalizer" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/src" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/src/main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
         <PATH_ELEMENT>
           <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/src/main/java" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
@@ -442,7 +518,7 @@
     <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="0.11111111" version="1" splitterProportion="0.5">
+    <navigator currentView="Scope" currentSubView="Tests" proportions="0.11111111" version="1" splitterProportion="0.5">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -450,7 +526,7 @@
       <hideEmptyPackages />
       <abbreviatePackageNames />
       <showStructure Favorites="false" Scope="false" PackagesPane="false" ProjectPane="false" />
-      <autoscrollToSource />
+      <autoscrollToSource Scope="false" />
       <autoscrollFromSource />
       <sortByType />
     </navigator>
@@ -471,16 +547,15 @@
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
   </component>
-  <component name="RunManager" selected="JUnit.ADLWriterGraphVisitorTest">
-    <tempConfiguration default="false" name="ADLWriterGraphVisitorTest" type="JUnit" factoryName="JUnit" enabled="false" merge="false">
-      <pattern value="org.objectweb.fractal.fractalizer.*" />
+  <component name="RunManager" selected="JUnit.org in fractalizer">
+    <tempConfiguration default="false" name="org in fractalizer" type="JUnit" factoryName="JUnit" enabled="false" merge="false">
       <module name="fractalizer" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="org.objectweb.fractal.fractalizer" />
-      <option name="MAIN_CLASS_NAME" value="org.objectweb.fractal.fractalizer.ADLWriterGraphVisitorTest" />
+      <option name="PACKAGE_NAME" value="org" />
+      <option name="MAIN_CLASS_NAME" />
       <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="package" />
       <option name="VM_PARAMETERS" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -488,7 +563,7 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="ADDITIONAL_CLASS_PATH" />
       <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="wholeProject" />
+        <value defaultName="singleModule" />
       </option>
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
@@ -527,6 +602,34 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
     </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG" enabled="false" merge="false">
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="ADDITIONAL_CLASS_PATH" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="wholeProject" />
+      </option>
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+      <method>
+        <option name="Make" value="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit" enabled="false" merge="false">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -549,7 +652,7 @@
       </method>
     </configuration>
     <list size="1">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.ADLWriterGraphVisitorTest" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.org in fractalizer" />
     </list>
   </component>
   <component name="ScopeViewComponent">
@@ -605,7 +708,29 @@
           <option name="myItemId" value="" />
           <option name="myItemType" value="" />
         </PATH_ELEMENT>
-        <PATH_ELEMENT USER_OBJECT="src/main/java">
+        <PATH_ELEMENT USER_OBJECT="src/main">
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT USER_OBJECT="Root">
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT USER_OBJECT="fractalizer">
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT USER_OBJECT="fractalizer">
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT USER_OBJECT="src/main">
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT USER_OBJECT="java">
           <option name="myItemId" value="" />
           <option name="myItemType" value="" />
         </PATH_ELEMENT>
@@ -686,38 +811,38 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="3" y="22" width="1426" height="874" extended-state="0" />
+    <frame x="1" y="22" width="1439" height="859" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="-1" />
-      <window_info id="Maven-2 Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="-1" />
-      <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="-1" />
-      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="-1" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288948" order="7" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24963716" order="0" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="1" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="1" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="6" />
-      <window_info id="Module Dependencies" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="-1" />
-      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="-1" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="-1" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="1" />
-      <window_info id="Maven projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="-1" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="-1" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288948" order="2" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="2" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="0" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="4" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="-1" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="-1" />
-      <window_info id="Duplicates" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="-1" />
-      <window_info id="CVS" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="2" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="0" />
-      <window_info id="Aspects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
-      <window_info id="EJB" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="3" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="5" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="0" />
+      <window_info id="Maven-2 Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="4" />
+      <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="7" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="0" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39613527" order="13" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2473041" order="1" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="6" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="2" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="14" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="12" />
+      <window_info id="Module Dependencies" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
+      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="2" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="1" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="6" />
+      <window_info id="Maven projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="2" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35326087" order="8" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="7" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="5" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="10" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="4" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="0" />
+      <window_info id="Duplicates" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="1" />
+      <window_info id="CVS" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="15" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="3" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="5" />
+      <window_info id="Aspects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
+      <window_info id="EJB" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="9" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="11" />
     </layout>
   </component>
   <component name="VcsManagerConfiguration">
@@ -785,41 +910,107 @@
     <entry file="file://$PROJECT_DIR$/src/test/java/org/objectweb/fractal/fractalizer/ADLWriterGraphVisitorTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/org/objectweb/fractal/fractalizer/ClassVisitorTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="46" selection-start="1569" selection-end="1569" vertical-scroll-proportion="0.5178317">
-          <folding />
+          <folding>
+            <marker date="1193340803000" expanded="false" signature="119:428" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/graph/PrimitiveComponentNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="0" selection-start="297" selection-end="297" vertical-scroll-proportion="0.27389443">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/graph/PrimitiveComponentNodeImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="38" selection-start="1804" selection-end="1804" vertical-scroll-proportion="0.77746075">
+        <state line="18" column="0" selection-start="297" selection-end="297" vertical-scroll-proportion="0.27988338">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/graph/InterfaceNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="153" selection-end="153" vertical-scroll-proportion="0.18830243">
+        <state line="9" column="0" selection-start="97" selection-end="97" vertical-scroll-proportion="0.20047733">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/graph/InterfaceNodeImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="7" selection-start="654" selection-end="654" vertical-scroll-proportion="0.41084164">
+        <state line="67" column="28" selection-start="1739" selection-end="1739" vertical-scroll-proportion="1.8615751">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/graph/PrimitiveComponentNodeImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="75" column="38" selection-start="1804" selection-end="1804" vertical-scroll-proportion="1.3490099">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/ADLWriterGraphVisitor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="0" selection-start="460" selection-end="460" vertical-scroll-proportion="0.40095466">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/ADLWriterGraphVisitorImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="63" selection-start="1647" selection-end="1647" vertical-scroll-proportion="0.77227724">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/graph/ComponentGraph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="0" selection-start="137" selection-end="137" vertical-scroll-proportion="0.25775656">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/graph/ComponentGraphImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="8" selection-start="1677" selection-end="1768" vertical-scroll-proportion="1.5445545">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/objectweb/fractal/fractalizer/GraphNodeFactoryImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="47" selection-start="909" selection-end="909" vertical-scroll-proportion="0.43564355">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/objectweb/fractal/fractalizer/ClassVisitorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="34" selection-start="876" selection-end="876" vertical-scroll-proportion="0.3699284">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/ClassVisitorImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="56" selection-start="1076" selection-end="1076" vertical-scroll-proportion="0.50358">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/graph/GraphNodeFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="0" selection-start="992" selection-end="992" vertical-scroll-proportion="0.7422434">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/graph/GraphNodeFactoryImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="111" selection-start="1581" selection-end="1581" vertical-scroll-proportion="0.7136038">
           <folding />
         </state>
       </provider>

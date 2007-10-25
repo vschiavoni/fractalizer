@@ -1,11 +1,8 @@
 
 package org.objectweb.fractal.fractalizer;
 
-import static org.junit.Assert.*;
-
-import java.util.Set;
-
 import org.junit.After;
+import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 import org.objectweb.fractal.fractalizer.fixtures.Client;
@@ -15,6 +12,8 @@ import org.objectweb.fractal.fractalizer.graph.ComponentGraph;
 import org.objectweb.fractal.fractalizer.graph.ComponentNotFoundException;
 import org.objectweb.fractal.fractalizer.graph.InterfaceNode;
 import org.objectweb.fractal.fractalizer.graph.PrimitiveComponentNode;
+
+import java.util.Set;
 
 /**
  * Tests for the {@link ClassVisitorImpl} visitor.

@@ -7,7 +7,7 @@ package org.objectweb.fractal.fractalizer.graph;
  * @author Alessio Pace
  *
  */
-public interface InterfaceNode {
+public interface InterfaceNode extends Visitable{
 	
 	String getName();
 	

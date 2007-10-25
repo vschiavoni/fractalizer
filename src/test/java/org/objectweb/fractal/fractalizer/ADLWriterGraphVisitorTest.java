@@ -4,15 +4,15 @@
 
 package org.objectweb.fractal.fractalizer;
 
-import static org.junit.Assert.*;
-
-import java.util.logging.Logger;
-
 import org.junit.After;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
 import org.junit.Before;
 import org.junit.Test;
 import org.objectweb.fractal.fractalizer.fixtures.Client;
 import org.objectweb.fractal.fractalizer.graph.ComponentGraph;
+
+import java.util.logging.Logger;
 
 /**
  * Test the ADLWriter

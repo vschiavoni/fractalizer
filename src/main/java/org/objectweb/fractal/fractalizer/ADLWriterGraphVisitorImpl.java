@@ -3,6 +3,7 @@ package org.objectweb.fractal.fractalizer;
 
 import org.objectweb.fractal.fractalizer.graph.ComponentGraph;
 import org.objectweb.fractal.fractalizer.graph.PrimitiveComponentNode;
+import org.objectweb.fractal.fractalizer.graph.InterfaceNode;
 
 /**
  * Default implementation of {@link ADLWriterGraphVisitor}
@@ -49,8 +50,8 @@ public class ADLWriterGraphVisitorImpl implements ADLWriterGraphVisitor
    */
   public void accept(ComponentGraph componentGraph)
   {
-   builder.append("<definition name='' >\n");
-   
+   builder.append("<definition name='"+componentGraph.getName()+"' >\n");
+
    for (PrimitiveComponentNode primitive: componentGraph.getPrimitiveComponentNodes()) {
      primitive.accept(this);
    }
@@ -64,8 +65,32 @@ public class ADLWriterGraphVisitorImpl implements ADLWriterGraphVisitor
   public void accept(PrimitiveComponentNode primitive)
   {
     builder.append("<component name='"+primitive.getPrimitiveImplementation()+"'>\n");
+
+                                                             
+      for (InterfaceNode interfaceNode: primitive.getClientInterfaces()){
+          interfaceNode.accept(this);
+      }
+       for (InterfaceNode interfaceNode: primitive.getServerInterfaces()){
+          interfaceNode.accept(this);
+      }
+
     builder.append("<content class='"+primitive.getPrimitiveImplementation()+"'/>\n");
     builder.append("</component>\n");
   }
+
+    public void accept(InterfaceNode interfaceNode) {
+
+        String role = interfaceRole(interfaceNode);
+
+      builder.append("<interface name='"+interfaceNode.getName()+"' role='"+role+"' signature='"+interfaceNode.getSignature()+"' />\n") ;
+    }
+
+    private String interfaceRole(InterfaceNode interfaceNode) {
+        String role= "client";
+        if (!interfaceNode.isClient()){
+            role = "server";
+        }
+        return role;
+    }
 
 }
