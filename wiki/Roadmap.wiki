@@ -10,6 +10,7 @@
 = 0.2 =
 
 * Support for composite components 
+
 * Support input from JAR file
 
 = 0.3 =
