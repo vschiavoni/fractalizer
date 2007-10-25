@@ -1,18 +1,25 @@
 #summary Roadmap for Fractalizer
 #labels roadmap
 
+= Introduction =
+This page introduces to the planned stages for Fractalizer Development
 
-= 0.1 =
+
+== Details ==
+
+== 0.1 ==
 
 * Produce simple ADL file from a set of classes, without composite components
 
 
-= 0.2 =
+== 0.2 ==
 
-* Support for composite components 
+* Support for composite components  (see http://code.google.com/p/fractalizer/issues/detail?id=2 )
 
 * Support input from JAR file
 
-= 0.3 =
+== 0.3 ==
 
-TBD
+* Support for different kind of output architectures (Spring ?)
+
+* ??
