@@ -1,0 +1,17 @@
+#summary Roadmap for Fractalizer
+#labels roadmap
+
+
+= 0.1 =
+
+* Produce simple ADL file from a set of classes, without composite components
+
+
+= 0.2 =
+
+* Support for composite components 
+* Support input from JAR file
+
+= 0.3 =
+
+TBD
