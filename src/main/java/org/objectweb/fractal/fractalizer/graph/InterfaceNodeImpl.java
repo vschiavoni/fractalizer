@@ -12,15 +12,35 @@ public class InterfaceNodeImpl implements InterfaceNode {
 	private PrimitiveComponentNode owner;
 	private String name;
 	private String signature;
-	
-	public InterfaceNodeImpl(PrimitiveComponentNode owner, String name, String signature) {
-		this.owner = owner;
-		this.name = name;
-		this.signature = signature;
+    private Boolean isClient;
+
+    /**
+     * Construct a  client interface.
+     *
+     * @param owner  the owner of this interface
+     * @param name    the name of this interface
+     * @param signature   the signature, that is its runtime type
+     */
+    public InterfaceNodeImpl(PrimitiveComponentNode owner, String name, String signature) {
+		       this(owner,name,signature, true);
 	}
 
+    /**
+     * @param owner  the owner of this interface
+     * @param name    the name of this interface
+     * @param signature   the signature, that is its runtime type
+     * @param isClient true if this interface is a client interface, false otherwise.
+     */
+    public InterfaceNodeImpl(PrimitiveComponentNode owner, String name, String signature, Boolean isClient){
+        this.owner = owner;
+		this.name = name;
+		this.signature = signature;
 
-	/* (non-Javadoc)
+        this.isClient = isClient;
+    }
+
+
+    /* (non-Javadoc)
 	 * @see org.objectweb.fractal.fractalizer.graph.InterfaceNode#getOwner()
 	 */
 	public PrimitiveComponentNode getOwner() {
@@ -43,8 +63,12 @@ public class InterfaceNodeImpl implements InterfaceNode {
 		return this.signature;
 	}
 
+    public Boolean isClient() {
+        return null;  //To change body of implemented methods use File | Settings | File Templates.
+    }
 
-  @Override
+
+    @Override
   public String toString()
   {
     return "InterfaceNode ["+name+","+signature+"]";

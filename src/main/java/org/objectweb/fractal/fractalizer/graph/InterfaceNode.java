@@ -12,8 +12,10 @@ public interface InterfaceNode {
 	String getName();
 	
 	String getSignature();
-	
-	/**
+
+    Boolean isClient();
+
+    /**
 	 * 
 	 * @return the {@link PrimitiveComponentNode} the component node owning this interface.
 	 */

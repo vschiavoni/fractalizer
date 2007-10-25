@@ -134,8 +134,8 @@ public class ClassVisitorTest
   }
   
   /**
-   * @param graph
-   * @param expected TODO
+   * @param graph  the input graph
+   * @param expected the expected number of nodes
    */
   private void checkTotalNodesInGraph(ComponentGraph graph, int expected)
   {
@@ -146,8 +146,8 @@ public class ClassVisitorTest
   
 
   /**
-   * @param clientItfs
-   * @param expected
+   * @param clientItfs  the set of interfaces
+   * @param expected  the expected number of interface
    */
   private void checkClientInterfaces(Set<InterfaceNode> clientItfs, int expected)
   {
@@ -156,8 +156,8 @@ public class ClassVisitorTest
   }
 
   /**
-   * @param serverItfs
-   * @param expected TODO
+   * @param serverItfs    the set of interfaces
+   * @param expected the expected number of interfaces
    */
   private void checkServerInterfaces(final Set<InterfaceNode> serverItfs,
       int expected)
