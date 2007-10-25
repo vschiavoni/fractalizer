@@ -1,16 +1,10 @@
 
 package org.objectweb.fractal.fractalizer;
 
+import org.objectweb.fractal.fractalizer.graph.*;
+
 import java.lang.reflect.Field;
 import java.util.logging.Logger;
-
-import org.objectweb.fractal.fractalizer.graph.BindingNode;
-import org.objectweb.fractal.fractalizer.graph.ComponentGraph;
-import org.objectweb.fractal.fractalizer.graph.ComponentGraphImpl;
-import org.objectweb.fractal.fractalizer.graph.GraphNodeFactory;
-import org.objectweb.fractal.fractalizer.graph.GraphNodeFactoryImpl;
-import org.objectweb.fractal.fractalizer.graph.InterfaceNodeImpl;
-import org.objectweb.fractal.fractalizer.graph.PrimitiveComponentNode;
 
 
 /**
@@ -47,7 +41,7 @@ public class ClassVisitorImpl implements ClassVisitor
     for (Class<?> itf: clazz.getInterfaces()) {
       String itfName = itf.getSimpleName();
       String itfSign = itf.getCanonicalName();
-      primitive.addServerInterface(new InterfaceNodeImpl(primitive,itfName, itfSign ));
+      primitive.addServerInterface(factory.createServerInterface(primitive,itfName, itfSign ));
     }
     
     
@@ -58,7 +52,7 @@ public class ClassVisitorImpl implements ClassVisitor
       final String clientItfName = f.getName();
       log.info("Field name: "+clientItfName);
       
-      primitive.addClientInterface(new InterfaceNodeImpl(primitive,clientItfName, clientItfType));
+      primitive.addClientInterface(factory.createClientInterface(primitive,clientItfName, clientItfType));
       
     }
     

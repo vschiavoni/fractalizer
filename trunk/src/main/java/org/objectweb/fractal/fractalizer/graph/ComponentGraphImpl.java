@@ -3,12 +3,12 @@
  */
 package org.objectweb.fractal.fractalizer.graph;
 
+import org.objectweb.fractal.fractalizer.ADLWriterGraphVisitor;
+
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-
-import org.objectweb.fractal.fractalizer.ADLWriterGraphVisitor;
 
 /**
  * @author Alessio Pace, Valerio Schiavoni
@@ -56,7 +56,16 @@ public class ComponentGraphImpl implements ComponentGraph{
     
   }
 
-  /**
+    /**
+     * return the name of the application
+     *
+     * @return
+     */
+    public String getName() {
+        return null;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    /**
    * @see org.objectweb.fractal.fractalizer.graph.Visitable#accept(org.objectweb.fractal.fractalizer.ADLWriterGraphVisitor)
    */
   public void accept(ADLWriterGraphVisitor v)

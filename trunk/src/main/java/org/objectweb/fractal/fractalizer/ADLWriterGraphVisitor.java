@@ -3,6 +3,7 @@ package org.objectweb.fractal.fractalizer;
 
 
 import org.objectweb.fractal.fractalizer.graph.ComponentGraph;
+import org.objectweb.fractal.fractalizer.graph.InterfaceNode;
 import org.objectweb.fractal.fractalizer.graph.PrimitiveComponentNode;
 
 /**
@@ -29,4 +30,6 @@ public interface ADLWriterGraphVisitor
    * @param primitiveComponentNodeImpl
    */
   public void accept(PrimitiveComponentNode primitive);
+
+    void accept(InterfaceNode interfaceNode);
 }

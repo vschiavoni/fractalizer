@@ -33,4 +33,10 @@ public interface ComponentGraph extends Visitable
    * Empty the graph, removing every node.
    */
   void empty();
+
+    /**
+     * return the name of the application
+     * @return
+     */
+    String getName();
 }
