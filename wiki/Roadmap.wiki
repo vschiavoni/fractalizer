@@ -12,6 +12,7 @@ This page introduces to the planned stages for Fractalizer Development
 * Produce simple ADL file from a set of classes, without composite components
 
 Question: what about the case in which is not unique the type of the primitive component providing a certain server interface (ie in the example, ServiceImpl, ServiceImpl2, both providing Service)
+Answer: see http://code.google.com/p/fractalizer/issues/detail?id=7 
 
 
 == 0.2 ==
