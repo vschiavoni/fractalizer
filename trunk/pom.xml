@@ -1,61 +1,23 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<?xml version="1.0" encoding="UTF-8"?><project>
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.objectweb.fractal</groupId>
   <artifactId>fractalizer</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
   <name>Fractalizer</name>
+  <version>0.0.1-SNAPSHOT</version>
   <description>Fractalizer is able to fractalize simple Java applications</description>
-  
   <developers>
-  	<developer>
-  		<name>Valerio Schiavoni</name>
-  		<email>valerio.schiavoni@gmail.com</email>
-  	</developer>
-  	<developer>
-  		<name>Alessio Pace</name>
-  		<email>alessio.pace@gmail.com</email>
-  	</developer>
+    <developer>
+      <name>Valerio Schiavoni</name>
+      <email>valerio.schiavoni@gmail.com</email>
+    </developer>
+    <developer>
+      <name>Alessio Pace</name>
+      <email>alessio.pace@gmail.com</email>
+    </developer>
   </developers>
-  
-  <dependencies>
-  
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.4</version>
-      <scope>test</scope>
-    </dependency>
-    
-    <dependency>
-    	<groupId>org.objectweb.fractal.fractaladl</groupId>
-    	<artifactId>fractal-adl</artifactId>
-    	<version>2.2</version>
-    </dependency>
-    
-    <dependency>
-    	<groupId>org.objectweb.fractal.julia</groupId>
-    	<artifactId>julia-runtime</artifactId>
-    	<version>2.5.1</version>
-    </dependency>
-    
-    <dependency>
-    	<groupId>org.objectweb.fractal.julia</groupId>
-    	<artifactId>julia-asm</artifactId>
-    	<version>2.5.1</version>
-    </dependency>
-    
-    <dependency>
-    	<groupId>org.objectweb.fractal.julia</groupId>
-    	<artifactId>julia-mixins</artifactId>
-    	<version>2.5.1</version>
-    </dependency>
-  </dependencies>
-  
   <build>
     <plugins>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
           <source>1.5</source>
@@ -64,5 +26,37 @@
       </plugin>
     </plugins>
   </build>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.4</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.objectweb.fractal.fractaladl</groupId>
+      <artifactId>fractal-adl</artifactId>
+      <version>2.2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.objectweb.fractal.julia</groupId>
+      <artifactId>julia-runtime</artifactId>
+      <version>2.5.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.objectweb.fractal.julia</groupId>
+      <artifactId>julia-asm</artifactId>
+      <version>2.5.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.objectweb.fractal.julia</groupId>
+      <artifactId>julia-mixins</artifactId>
+      <version>2.5.1</version>
+    </dependency>
+    <dependency>
+      <groupId>xmlunit</groupId>
+      <artifactId>xmlunit</artifactId>
+      <version>1.1</version>
+    </dependency>
+  </dependencies>
 </project>
-
