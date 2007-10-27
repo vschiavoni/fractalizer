@@ -78,7 +78,9 @@ public abstract class MultiClassLoader extends ClassLoader
     }
 
     // ----- Define it (parse the class file)
-    result = defineClass(className, classBytes, 0, classBytes.length);
+    final String binaryName = className.substring(0, className.lastIndexOf(".")).replace('.','/');
+    //name is optional
+    result = defineClass(null, classBytes, 0, classBytes.length);
     if (result == null)
     {
       throw new ClassFormatError();

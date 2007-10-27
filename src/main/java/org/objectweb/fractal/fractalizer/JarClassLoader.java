@@ -17,7 +17,8 @@ public class JarClassLoader extends MultiClassLoader
   protected byte[] loadClassBytes(String className)
   {
     // Support the MultiClassLoader's class name munging facility.
-    className = formatClassName(className);
+    //className = formatClassName(className); XXX commented out by me
+    
     // Attempt to get the class data from the JarResource.
     return (jarResources.getResource(className));
   }
