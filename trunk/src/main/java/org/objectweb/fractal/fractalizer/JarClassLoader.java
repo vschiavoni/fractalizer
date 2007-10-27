@@ -11,6 +11,7 @@ public class JarClassLoader extends MultiClassLoader
   {
     // Create the JarResource and suck in the jar file.
     jarResources = new JarResources(jarName);
+    this.monitorOn = true;
   }
 
   protected byte[] loadClassBytes(String className)

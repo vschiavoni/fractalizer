@@ -70,6 +70,7 @@ public abstract class MultiClassLoader extends ClassLoader
 
     // ----- Try to load it from preferred source
     // Note loadClassBytes() is an abstract method
+    monitor(">> ClassName used by loadClassBytes: "+className);
     classBytes = loadClassBytes(className);
     if (classBytes == null)
     {
@@ -97,7 +98,7 @@ public abstract class MultiClassLoader extends ClassLoader
   /**
    * This optional call allows a class name such as "COM.test.Hello" to be
    * changed to "COM_test_Hello", which is useful for storing classes from
-   * different packages in the same retrival directory. In the above example the
+   * different packages in the same retrieval directory. In the above example the
    * char would be '_'.
    */
   public void setClassNameReplacementChar(char replacement)
