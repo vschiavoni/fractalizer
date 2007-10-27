@@ -13,6 +13,16 @@ import org.apache.commons.io.FileUtils;
  */
 public class Fractalizer
 {
+  
+  boolean debug = false;
+  
+  /**
+   * @param debug on if debug is activated, false otherwise
+   */
+  public Fractalizer(boolean debug)
+  {
+    this.debug = debug;
+  }
 
   public String fractalize(String jarName) {
     ClassVisitor visitor = new ClassVisitorImpl();
@@ -21,11 +31,17 @@ public class Fractalizer
     
     for (String clazz: jarLoader.classes()) {
       if (!clazz.endsWith(".class")) {
-        System.err.println("Skipping file: "+clazz);
+        if (debug)
+        {
+          System.err.println("Skipping file: " + clazz);
+        }
         continue;
       }
       try
       {
+        if (debug) {
+          System.err.println("Loading: "+clazz);
+        }
         Class<?> c = jarLoader.loadClass(clazz, true); //true to resolve the class, required to use it.
         visitor.visit(c);
       }
@@ -73,7 +89,7 @@ public class Fractalizer
       }
     }
 
-    Fractalizer fractalizer = new Fractalizer();
+    Fractalizer fractalizer = new Fractalizer(true);
     String adlAsString = fractalizer.fractalize(jarFileName);
     fractalizer.writeAdlOn(adlAsString, adlFileName);
   }
