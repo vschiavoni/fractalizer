@@ -18,14 +18,14 @@
     <list default="true" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/graph/ComponentGraph.java" afterPath="$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/graph/ComponentGraph.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/graph/ComponentGraphImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/graph/ComponentGraphImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/graph/GraphNodeFactory.java" afterPath="$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/graph/GraphNodeFactory.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/org/objectweb/fractal/fractalizer/ADLWriterGraphVisitorTest.java" afterPath="$PROJECT_DIR$/src/test/java/org/objectweb/fractal/fractalizer/ADLWriterGraphVisitorTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/graph/GraphNodeFactory.java" afterPath="$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/graph/GraphNodeFactory.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fractalizer.iws" afterPath="$PROJECT_DIR$/fractalizer.iws" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/ADLWriterGraphVisitor.java" afterPath="$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/ADLWriterGraphVisitor.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/graph/PrimitiveComponentNodeImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/graph/PrimitiveComponentNodeImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/org/objectweb/fractal/fractalizer/GraphNodeFactoryImplTest.java" afterPath="$PROJECT_DIR$/src/test/java/org/objectweb/fractal/fractalizer/GraphNodeFactoryImplTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/graph/InterfaceNode.java" afterPath="$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/graph/InterfaceNode.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/graph/GraphNodeFactoryImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/graph/GraphNodeFactoryImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/graph/InterfaceNode.java" afterPath="$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/graph/InterfaceNode.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/graph/InterfaceNodeImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/graph/InterfaceNodeImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/ADLWriterGraphVisitorImpl.java" afterPath="$PROJECT_DIR$/src/main/java/org/objectweb/fractal/fractalizer/ADLWriterGraphVisitorImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/org/objectweb/fractal/fractalizer/ClassVisitorTest.java" afterPath="$PROJECT_DIR$/src/test/java/org/objectweb/fractal/fractalizer/ClassVisitorTest.java" />
@@ -666,18 +666,6 @@
           <option name="myItemId" value="" />
           <option name="myItemType" value="" />
         </PATH_ELEMENT>
-        <PATH_ELEMENT USER_OBJECT="fractalizer">
-          <option name="myItemId" value="" />
-          <option name="myItemType" value="" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT USER_OBJECT="src/test/java">
-          <option name="myItemId" value="" />
-          <option name="myItemType" value="" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT USER_OBJECT="org/objectweb/fractal/fractalizer">
-          <option name="myItemId" value="" />
-          <option name="myItemType" value="" />
-        </PATH_ELEMENT>
       </PATH>
     </subPane>
     <subPane subId="Production">
@@ -812,14 +800,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="22" width="1439" height="859" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="0" />
       <window_info id="Maven-2 Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="4" />
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="7" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="0" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39613527" order="13" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2473041" order="1" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2473041" order="1" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="6" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="2" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="14" />
@@ -830,7 +818,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="6" />
       <window_info id="Maven projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="2" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35326087" order="8" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35326087" order="8" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="7" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="5" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="10" />

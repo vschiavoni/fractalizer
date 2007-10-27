@@ -22,9 +22,10 @@ public interface ADLWriterGraphVisitor
   public String visit(ComponentGraph graph);
 
   /**
-   * @param componentGraph
+   * Visit a component graph.
+   * @param graph
    */
-  public void accept(ComponentGraph componentGraph);
+  public void accept(ComponentGraph graph);
 
   /**
    * @param primitiveComponentNodeImpl
