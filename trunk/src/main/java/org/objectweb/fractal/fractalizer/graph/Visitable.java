@@ -6,7 +6,6 @@ import org.objectweb.fractal.fractalizer.ADLWriterGraphVisitor;
 /**
  * An interface for visitable elements
  */
-public interface Visitable
-{
+public interface Visitable {
   void accept(ADLWriterGraphVisitor v);
 }

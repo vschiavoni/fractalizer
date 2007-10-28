@@ -1,45 +1,45 @@
 /**
  * 
  */
+
 package org.objectweb.fractal.fractalizer.graph;
 
 /**
  * @author Alessio Pace
- *
  */
 public class ComponentNotFoundException extends Exception {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 3888728277370739748L;
+  /**
+   * 
+   */
+  private static final long serialVersionUID = 3888728277370739748L;
 
-	/**
-	 * 
-	 */
-	public ComponentNotFoundException() {
-	}
+  /**
+   * 
+   */
+  public ComponentNotFoundException() {
+  }
 
-	/**
-	 * @param message
-	 */
-	public ComponentNotFoundException(String message) {
-		super(message);
-	}
+  /**
+   * @param message
+   */
+  public ComponentNotFoundException(final String message) {
+    super(message);
+  }
 
-	/**
-	 * @param cause
-	 */
-	public ComponentNotFoundException(Throwable cause) {
-		super(cause);
-	}
+  /**
+   * @param cause
+   */
+  public ComponentNotFoundException(final Throwable cause) {
+    super(cause);
+  }
 
-	/**
-	 * @param message
-	 * @param cause
-	 */
-	public ComponentNotFoundException(String message, Throwable cause) {
-		super(message, cause);
-	}
+  /**
+   * @param message
+   * @param cause
+   */
+  public ComponentNotFoundException(final String message, final Throwable cause) {
+    super(message, cause);
+  }
 
 }

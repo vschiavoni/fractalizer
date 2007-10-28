@@ -4,24 +4,22 @@
 
 package org.objectweb.fractal.fractalizer.graph;
 
-import org.objectweb.fractal.fractalizer.ADLWriterGraphVisitor;
-
 import java.util.HashSet;
 import java.util.Set;
+
+import org.objectweb.fractal.fractalizer.ADLWriterGraphVisitor;
 
 /**
  * @author Alessio Pace, Valerio Schiavoni
  */
-public class PrimitiveComponentNodeImpl implements PrimitiveComponentNode
-{
+public class PrimitiveComponentNodeImpl implements PrimitiveComponentNode {
 
-  private Set<InterfaceNode> serverInterfaces;
-  private Set<InterfaceNode> clientInterfaces;
+  private final Set<InterfaceNode> serverInterfaces;
+  private final Set<InterfaceNode> clientInterfaces;
 
-  private String             implementation;
+  private String                   implementation;
 
-  public PrimitiveComponentNodeImpl(String implementation)
-  {
+  public PrimitiveComponentNodeImpl(final String implementation) {
     this.implementation = implementation;
     this.serverInterfaces = new HashSet<InterfaceNode>();
     this.clientInterfaces = new HashSet<InterfaceNode>();
@@ -32,8 +30,7 @@ public class PrimitiveComponentNodeImpl implements PrimitiveComponentNode
    * 
    * @see org.objectweb.fractal.fractalizer.graph.PrimitiveComponentNode#addInterface(org.objectweb.fractal.fractalizer.graph.InterfaceNode)
    */
-  public void addServerInterface(InterfaceNode interfaceNode)
-  {
+  public void addServerInterface(final InterfaceNode interfaceNode) {
     this.serverInterfaces.add(interfaceNode);
 
   }
@@ -43,8 +40,7 @@ public class PrimitiveComponentNodeImpl implements PrimitiveComponentNode
    * 
    * @see org.objectweb.fractal.fractalizer.graph.PrimitiveComponentNode#getInterfaces()
    */
-  public Set<InterfaceNode> getServerInterfaces()
-  {
+  public Set<InterfaceNode> getServerInterfaces() {
     return this.serverInterfaces;
   }
 
@@ -53,8 +49,7 @@ public class PrimitiveComponentNodeImpl implements PrimitiveComponentNode
    * 
    * @see org.objectweb.fractal.fractalizer.graph.PrimitiveComponentNode#getPrimitiveImplementation()
    */
-  public String getPrimitiveImplementation()
-  {
+  public String getPrimitiveImplementation() {
     return this.implementation;
   }
 
@@ -63,18 +58,15 @@ public class PrimitiveComponentNodeImpl implements PrimitiveComponentNode
    * 
    * @see org.objectweb.fractal.fractalizer.graph.PrimitiveComponentNode#setPrimitiveImplementation(java.lang.String)
    */
-  public void setPrimitiveImplementation(String implementation)
-  {
+  public void setPrimitiveImplementation(final String implementation) {
     this.implementation = implementation;
   }
 
-  public Set<InterfaceNode> getClientInterfaces()
-  {
+  public Set<InterfaceNode> getClientInterfaces() {
     return clientInterfaces;
   }
 
-  public void addClientInterface(InterfaceNode interfaceNode)
-  {
+  public void addClientInterface(final InterfaceNode interfaceNode) {
     this.clientInterfaces.add(interfaceNode);
 
   }
@@ -82,10 +74,9 @@ public class PrimitiveComponentNodeImpl implements PrimitiveComponentNode
   /**
    * @see org.objectweb.fractal.fractalizer.graph.Visitable#accept(org.objectweb.fractal.fractalizer.ADLWriterGraphVisitor)
    */
-  public void accept(ADLWriterGraphVisitor v)
-  {
-    
+  public void accept(final ADLWriterGraphVisitor v) {
+
     v.accept(this);
-    
+
   }
 }

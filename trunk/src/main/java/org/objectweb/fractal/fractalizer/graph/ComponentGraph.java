@@ -9,8 +9,7 @@ import java.util.Set;
 /**
  * @author Alessio Pace, Valerio Schiavoni
  */
-public interface ComponentGraph extends Visitable 
-{
+public interface ComponentGraph extends Visitable {
 
   /**
    * @return the set of primitive component nodes forming the graph.
@@ -34,9 +33,10 @@ public interface ComponentGraph extends Visitable
    */
   void empty();
 
-    /**
-     * return the name of the application
-     * @return
-     */
-    String getName();
+  /**
+   * return the name of the application.
+   * 
+   * @return
+   */
+  String getName();
 }
