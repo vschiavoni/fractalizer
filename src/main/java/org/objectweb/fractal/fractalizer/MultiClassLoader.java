@@ -13,19 +13,17 @@ import java.util.Hashtable;
  * @author Jack Harich - 8/18/97
  * @author John D. Mitchell - 99.03.04
  */
-public abstract class MultiClassLoader extends ClassLoader
-{
+public abstract class MultiClassLoader extends ClassLoader {
 
   // ---------- Fields --------------------------------------
-  private Hashtable classes         = new Hashtable();
-  private char      classNameReplacementChar;
+  private final Hashtable classes         = new Hashtable();
+  private char            classNameReplacementChar;
 
-  protected boolean monitorOn       = false;
-  protected boolean sourceMonitorOn = true;
+  protected boolean       monitorOn       = false;
+  protected boolean       sourceMonitorOn = true;
 
   // ---------- Initialization ------------------------------
-  public MultiClassLoader()
-  {
+  public MultiClassLoader() {
   }
 
   // ---------- Superclass Overrides ------------------------
@@ -33,15 +31,15 @@ public abstract class MultiClassLoader extends ClassLoader
    * This is a simple version for external clients since they will always want
    * the class resolved before it is returned to them.
    */
-  public Class loadClass(String className) throws ClassNotFoundException
-  {
+  @Override
+  public Class loadClass(final String className) throws ClassNotFoundException {
     return (loadClass(className, true));
   }
 
   // ---------- Abstract Implementation ---------------------
-  public synchronized Class loadClass(String className, boolean resolveIt)
-      throws ClassNotFoundException
-  {
+  @Override
+  public synchronized Class loadClass(final String className,
+      final boolean resolveIt) throws ClassNotFoundException {
 
     Class result;
     byte[] classBytes;
@@ -50,45 +48,39 @@ public abstract class MultiClassLoader extends ClassLoader
 
     // ----- Check our local cache of classes
     result = (Class) classes.get(className);
-    if (result != null)
-    {
+    if (result != null) {
       monitor(">> returning cached result.");
       return result;
     }
 
     // ----- Check with the primordial class loader
-    try
-    {
+    try {
       result = super.findSystemClass(className);
       monitor(">> returning system class (in CLASSPATH).");
       return result;
-    }
-    catch (ClassNotFoundException e)
-    {
+    } catch (final ClassNotFoundException e) {
       monitor(">> Not a system class.");
     }
 
     // ----- Try to load it from preferred source
     // Note loadClassBytes() is an abstract method
-    monitor(">> ClassName used by loadClassBytes: "+className);
+    monitor(">> ClassName used by loadClassBytes: " + className);
     classBytes = loadClassBytes(className);
-    if (classBytes == null)
-    {
+    if (classBytes == null) {
       throw new ClassNotFoundException();
     }
 
     // ----- Define it (parse the class file)
-    final String binaryName = className.substring(0, className.lastIndexOf(".")).replace('.','/');
-    //name is optional
+    final String binaryName = className
+        .substring(0, className.lastIndexOf(".")).replace('.', '/');
+    // name is optional
     result = defineClass(null, classBytes, 0, classBytes.length);
-    if (result == null)
-    {
+    if (result == null) {
       throw new ClassFormatError();
     }
 
     // ----- Resolve if necessary
-    if (resolveIt)
-      resolveClass(result);
+    if (resolveIt) resolveClass(result);
 
     // Done
     classes.put(className, result);
@@ -100,40 +92,32 @@ public abstract class MultiClassLoader extends ClassLoader
   /**
    * This optional call allows a class name such as "COM.test.Hello" to be
    * changed to "COM_test_Hello", which is useful for storing classes from
-   * different packages in the same retrieval directory. In the above example the
-   * char would be '_'.
+   * different packages in the same retrieval directory. In the above example
+   * the char would be '_'.
    */
-  public void setClassNameReplacementChar(char replacement)
-  {
+  public void setClassNameReplacementChar(final char replacement) {
     classNameReplacementChar = replacement;
   }
 
   // ---------- Protected Methods ---------------------------
   protected abstract byte[] loadClassBytes(String className);
 
-  protected String formatClassName(String className)
-  {
-    if (classNameReplacementChar == '\u0000')
-    {
+  protected String formatClassName(final String className) {
+    if (classNameReplacementChar == '\u0000') {
       // '/' is used to map the package to the path
       return className.replace('.', '/') + ".class";
-    }
-    else
-    {
+    } else {
       // Replace '.' with custom char, such as '_'
       return className.replace('.', classNameReplacementChar) + ".class";
     }
   }
 
-  protected void monitor(String text)
-  {
-    if (monitorOn)
-      print(text);
+  protected void monitor(final String text) {
+    if (monitorOn) print(text);
   }
 
-  //--- Std
-  protected static void print(String text)
-  {
+  // --- Std
+  protected static void print(final String text) {
     System.out.println(text);
   }
 

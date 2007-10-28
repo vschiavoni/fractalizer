@@ -1,8 +1,14 @@
 
 package org.objectweb.fractal.fractalizer;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+
+import java.util.Set;
+
 import org.junit.After;
-import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 import org.objectweb.fractal.fractalizer.fixtures.Client;
@@ -13,14 +19,11 @@ import org.objectweb.fractal.fractalizer.graph.ComponentNotFoundException;
 import org.objectweb.fractal.fractalizer.graph.InterfaceNode;
 import org.objectweb.fractal.fractalizer.graph.PrimitiveComponentNode;
 
-import java.util.Set;
-
 /**
  * Tests for the {@link ClassVisitorImpl} visitor.
  */
 
-public class ClassVisitorTest
-{
+public class ClassVisitorTest {
 
   ClassVisitor visitor;
 
@@ -28,8 +31,7 @@ public class ClassVisitorTest
    * @throws java.lang.Exception
    */
   @Before
-  public void setUp() throws Exception
-  {
+  public void setUp() throws Exception {
     this.visitor = new ClassVisitorImpl();
   }
 
@@ -38,19 +40,17 @@ public class ClassVisitorTest
    * {@link org.objectweb.fractal.fractalizer.ClassVisitorImpl#visit(java.lang.Class)}.
    */
   @Test
-  public void testVisitClient()
-  {
+  public void testVisitClient() {
     visitor.visit(Client.class);
 
-    ComponentGraph graph = visitor.getComponentGraph();
+    final ComponentGraph graph = visitor.getComponentGraph();
 
     assertNotNull("The component graph should not be null", graph);
 
     checkTotalNodesInGraph(graph, 1);
 
-    try
-    {
-      PrimitiveComponentNode primitive = graph
+    try {
+      final PrimitiveComponentNode primitive = graph
           .getPrimitiveComponentNodeByImplementation(Client.class
               .getCanonicalName());
 
@@ -59,31 +59,27 @@ public class ClassVisitorTest
       checkImplementation(primitive, Client.class.getCanonicalName());
 
       checkServerInterfaces(primitive.getServerInterfaces(), 1);
-      
-      checkClientInterfaces( primitive.getClientInterfaces(),1);
-     
 
-    }
-    catch (ComponentNotFoundException e)
-    {
+      checkClientInterfaces(primitive.getClientInterfaces(), 1);
+
+    } catch (final ComponentNotFoundException e) {
       fail("Primitive component for class " + Client.class.toString()
           + " was not found");
     }
 
   }
-  
+
   @Test
   public void testVisitServiceImpl() {
-    
+
     visitor.visit(ServiceImpl.class);
 
-    ComponentGraph graph = visitor.getComponentGraph();
-    
+    final ComponentGraph graph = visitor.getComponentGraph();
+
     checkTotalNodesInGraph(graph, 1);
-    
-    try
-    {
-      PrimitiveComponentNode primitive = graph
+
+    try {
+      final PrimitiveComponentNode primitive = graph
           .getPrimitiveComponentNodeByImplementation(ServiceImpl.class
               .getCanonicalName());
 
@@ -92,75 +88,66 @@ public class ClassVisitorTest
       checkImplementation(primitive, ServiceImpl.class.getCanonicalName());
 
       checkServerInterfaces(primitive.getServerInterfaces(), 1);
-      
-      checkClientInterfaces( primitive.getClientInterfaces(),0);
-     
 
-    }
-    catch (ComponentNotFoundException e)
-    {
+      checkClientInterfaces(primitive.getClientInterfaces(), 0);
+
+    } catch (final ComponentNotFoundException e) {
       fail("Primitive component for class " + ServiceImpl.class.toString()
           + " was not found");
     }
-    
+
   }
-  
+
   @Test
-  public void testVisitClassesOneAfterAnother()
-  {
+  public void testVisitClassesOneAfterAnother() {
     visitor.visit(Service.class);
     visitor.visit(ServiceImpl.class);
-    ComponentGraph graph = visitor.getComponentGraph();
+    final ComponentGraph graph = visitor.getComponentGraph();
     checkTotalNodesInGraph(graph, 2);
   }
 
   @Test
-  public void testVisitClassesInArray()
-  {
+  public void testVisitClassesInArray() {
     visitor.visit(new Class[]{Service.class, ServiceImpl.class});
 
-    ComponentGraph graph = visitor.getComponentGraph();
+    final ComponentGraph graph = visitor.getComponentGraph();
     checkTotalNodesInGraph(graph, 2);
   }
-  
+
   @Test
-  public void testVisitTwiceSameClass()
-  {
+  public void testVisitTwiceSameClass() {
     visitor.visit(Service.class);
     visitor.visit(Service.class);
-    ComponentGraph graph = visitor.getComponentGraph();
+    final ComponentGraph graph = visitor.getComponentGraph();
     checkTotalNodesInGraph(graph, 1);
   }
-  
+
   /**
-   * @param graph  the input graph
+   * @param graph the input graph
    * @param expected the expected number of nodes
    */
-  private void checkTotalNodesInGraph(ComponentGraph graph, int expected)
-  {
+  private void checkTotalNodesInGraph(final ComponentGraph graph,
+      final int expected) {
     assertNotNull("The component graph should not be null", graph);
     assertEquals(expected, graph.getPrimitiveComponentNodes().size());
   }
-  
-  
 
   /**
-   * @param clientItfs  the set of interfaces
-   * @param expected  the expected number of interface
+   * @param clientItfs the set of interfaces
+   * @param expected the expected number of interface
    */
-  private void checkClientInterfaces(Set<InterfaceNode> clientItfs, int expected)
-  {
+  private void checkClientInterfaces(final Set<InterfaceNode> clientItfs,
+      final int expected) {
     assertNotNull(clientItfs);
     assertEquals(expected, clientItfs.size());
   }
 
   /**
-   * @param serverItfs    the set of interfaces
+   * @param serverItfs the set of interfaces
    * @param expected the expected number of interfaces
    */
   private void checkServerInterfaces(final Set<InterfaceNode> serverItfs,
-      int expected)
-  {
+      final int expected) {
     assertNotNull(serverItfs);
     assertEquals(expected, serverItfs.size());
   }
@@ -169,24 +156,23 @@ public class ClassVisitorTest
    * @param primitive
    * @param expected TODO
    */
-  private void checkImplementation(PrimitiveComponentNode primitive,
-      String expected)
-  {
+  private void checkImplementation(final PrimitiveComponentNode primitive,
+      final String expected) {
     assertEquals(expected, primitive.getPrimitiveImplementation());
   }
 
   /**
    * @param primitive
    */
-  private void checkNotNull(PrimitiveComponentNode primitive)
-  {
+  private void checkNotNull(final PrimitiveComponentNode primitive) {
     assertNotNull("the primitive comp should not be null", primitive);
   }
-  
+
   @After
-  public void emptyGraphAfterVisit(){
+  public void emptyGraphAfterVisit() {
     visitor.getComponentGraph().empty();
-    assertTrue(visitor.getComponentGraph().getPrimitiveComponentNodes().isEmpty());
+    assertTrue(visitor.getComponentGraph().getPrimitiveComponentNodes()
+        .isEmpty());
   }
 
 }
