@@ -6,6 +6,7 @@ import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
 import org.objectweb.fractal.fractalizer.JarClassLoader.JarClassLoaderException;
+import org.objectweb.fractal.fractalizer.graph.ComponentGraph;
 
 /**
  * Fractalizer is a best-effort tool to automatically transform an
@@ -16,9 +17,11 @@ import org.objectweb.fractal.fractalizer.JarClassLoader.JarClassLoaderException;
  */
 public class Fractalizer {
 
-  boolean                        debug = false;
-  private final ClassVisitor     classVisitor;
-  private final BindingsResolver bindingResolver;
+  boolean                             debug = false;
+  private final ClassVisitor          classVisitor;
+  private final BindingsResolver      bindingResolver;
+  private JarClassLoader              jarLoader;
+  private final ADLWriterGraphVisitor adlWriter;
 
   /**
    * @param debug on if debug is activated, false otherwise
@@ -27,6 +30,8 @@ public class Fractalizer {
     this.debug = debug;
     classVisitor = new ClassVisitorImpl();
     bindingResolver = new BindingsResolverImpl();
+    jarLoader = null;
+    adlWriter = new ADLWriterGraphVisitorImpl();
   }
 
   /**
@@ -42,13 +47,18 @@ public class Fractalizer {
    * @return
    */
   public String fractalize(final String jarName) {
-    JarClassLoader jarLoader = null;
+    /*
+     * 1) jar class loade creation
+     */
     try {
       jarLoader = JarClassLoader.createJarClassLoaderFromFileWithName(jarName);
     } catch (final JarClassLoaderException e) {
       e.printStackTrace();
     }
 
+    /*
+     * 2) ComponentGraph creation
+     */
     for (final Class<?> clazz : jarLoader.getAllclasses()) {
       if (debug) {
         System.err.println("Class under visit: " + clazz.getCanonicalName());
@@ -56,9 +66,18 @@ public class Fractalizer {
       classVisitor.visit(clazz);
     }
 
-    final ADLWriterGraphVisitor writer = new ADLWriterGraphVisitorImpl();
+    /* the ComponentGraph */
+    final ComponentGraph componentGraph = classVisitor.getComponentGraph();
 
-    return writer.visit(classVisitor.getComponentGraph());
+    /*
+     * 3) Binding resolution
+     */
+    this.bindingResolver.resolveBindings(componentGraph);
+
+    /*
+     * 4) ADL writing
+     */
+    return adlWriter.visit(componentGraph);
 
   }
 

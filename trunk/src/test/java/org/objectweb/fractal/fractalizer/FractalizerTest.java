@@ -1,9 +1,14 @@
 
 package org.objectweb.fractal.fractalizer;
 
+import static org.junit.Assert.fail;
+
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * @author Valerio Schiavoni, Alessio Pace
+ */
 public class FractalizerTest {
 
   Fractalizer fractalizer;
@@ -13,11 +18,12 @@ public class FractalizerTest {
    */
   @Before
   public void setUp() throws Exception {
+    this.fractalizer = new Fractalizer(true);
   }
 
   @Test
   public void testMain() {
-    // todo
+    fail("WRITE ME PLEASE");
   }
 
 }
