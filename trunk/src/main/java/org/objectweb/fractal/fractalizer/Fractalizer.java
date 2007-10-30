@@ -11,24 +11,40 @@ import org.objectweb.fractal.fractalizer.JarClassLoader.JarClassLoaderException;
  * Fractalizer is a best-effort tool to automatically transform an
  * Object-Oriented java application to a corresponding Component-Oriented java
  * application, according to the Fractal Component Model.
+ * 
+ * @author Valerio Schiavoni, Alessio Pace
  */
 public class Fractalizer {
 
-  boolean debug = false;
+  boolean                        debug = false;
+  private final ClassVisitor     classVisitor;
+  private final BindingsResolver bindingResolver;
 
   /**
    * @param debug on if debug is activated, false otherwise
    */
   public Fractalizer(final boolean debug) {
     this.debug = debug;
+    classVisitor = new ClassVisitorImpl();
+    bindingResolver = new BindingsResolverImpl();
   }
 
+  /**
+   * The steps are the following:
+   * <ol>
+   * <li>creation of a JarClassLoader from the input jar file</li>
+   * <li>creation of the ComponentGraph from the classes found in the jar</li>
+   * <li>resolution of the bindings in the ComponentGrah</li>
+   * <li>writing of the ComponentGraph to output format</li>
+   * </ol>.
+   * 
+   * @param jarName
+   * @return
+   */
   public String fractalize(final String jarName) {
-    final ClassVisitor visitor = new ClassVisitorImpl();
-
     JarClassLoader jarLoader = null;
     try {
-      jarLoader = JarClassLoader.createJarClassLaoderFromFileWithName(jarName);
+      jarLoader = JarClassLoader.createJarClassLoaderFromFileWithName(jarName);
     } catch (final JarClassLoaderException e) {
       e.printStackTrace();
     }
@@ -37,12 +53,12 @@ public class Fractalizer {
       if (debug) {
         System.err.println("Class under visit: " + clazz.getCanonicalName());
       }
-      visitor.visit(clazz);
+      classVisitor.visit(clazz);
     }
 
     final ADLWriterGraphVisitor writer = new ADLWriterGraphVisitorImpl();
 
-    return writer.visit(visitor.getComponentGraph());
+    return writer.visit(classVisitor.getComponentGraph());
 
   }
 

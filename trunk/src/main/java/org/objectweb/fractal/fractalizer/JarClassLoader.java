@@ -73,7 +73,7 @@ public class JarClassLoader extends URLClassLoader {
    * @return
    * @throws JarClassLoaderException
    */
-  public static JarClassLoader createJarClassLaoderFromFileWithName(
+  public static JarClassLoader createJarClassLoaderFromFileWithName(
       final String jarName) throws JarClassLoaderException {
 
     return createJarClassLaoderFromFile(new File(jarName));
