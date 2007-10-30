@@ -1,15 +1,9 @@
-/**
- * Author: Valerio Schiavoni <valerio.schiavoni@gmail.com>
- */
 
 package org.objectweb.fractal.fractalizer;
 
 import org.junit.Before;
 import org.junit.Test;
 
-/**
- * @author Valerio Schiavoni <valerio.schiavoni@gmail.com>
- */
 public class FractalizerTest {
 
   Fractalizer fractalizer;
