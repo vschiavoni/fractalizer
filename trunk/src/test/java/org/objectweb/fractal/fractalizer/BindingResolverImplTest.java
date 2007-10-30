@@ -4,12 +4,13 @@
 
 package org.objectweb.fractal.fractalizer;
 
-import static org.junit.Assert.fail;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.objectweb.fractal.fractalizer.fixtures.Client;
 import org.objectweb.fractal.fractalizer.fixtures.Service;
+import org.objectweb.fractal.fractalizer.fixtures.ServiceImpl;
 import org.objectweb.fractal.fractalizer.graph.ComponentGraph;
 import org.objectweb.fractal.fractalizer.graph.ComponentGraphImpl;
 import org.objectweb.fractal.fractalizer.graph.InterfaceNodeImpl;
@@ -21,7 +22,8 @@ import org.objectweb.fractal.fractalizer.graph.PrimitiveComponentNodeImpl;
  */
 public class BindingResolverImplTest {
 
-  private ComponentGraph componentGraph;
+  private ComponentGraph   componentGraph;
+  private BindingsResolver bindingResolver;
 
   /**
    * Create a {@link ComponentGraph} with a primitive component node having one
@@ -31,6 +33,7 @@ public class BindingResolverImplTest {
    */
   @Before
   public void setUp() throws Exception {
+    this.bindingResolver = new BindingsResolverImpl();
     this.componentGraph = new ComponentGraphImpl();
 
     final PrimitiveComponentNode clientComponentNode = new PrimitiveComponentNodeImpl(
@@ -43,13 +46,35 @@ public class BindingResolverImplTest {
 
   }
 
+  protected PrimitiveComponentNode createServiceImplComponent(
+      final Class<?> concreteImplementation) {
+
+    final PrimitiveComponentNode serviceImpl = new PrimitiveComponentNodeImpl(
+        concreteImplementation.getCanonicalName());
+    serviceImpl.addServerInterface(new InterfaceNodeImpl(
+        serviceImpl, "service", Service.class));
+
+    return serviceImpl;
+  }
+
   /**
-   * Test method for
-   * {@link org.objectweb.fractal.fractalizer.BindingsResolverImpl#resolveBindings(org.objectweb.fractal.fractalizer.graph.ComponentGraph)}.
+   * In this test the ComponentGraph to be resolved contains 2 primitive
+   * components:
+   * <ol>
+   * <li>a Client component, with a Service client interface to be bound</li>
+   * <li>a ServiceImpl component, providing a Service interface</li>
+   * </ol>.
    */
   @Test
-  public final void testResolveBindings() {
-    fail("Not yet implemented");
+  public final void testResolveBindingsWithOneClientComponentAndOneMatchingServerComponent() {
+
+    final PrimitiveComponentNode serviceImpl = createServiceImplComponent(ServiceImpl.class);
+    this.componentGraph.addPrimitiveComponentNode(serviceImpl);
+    this.bindingResolver.resolveBindings(componentGraph);
+
+    assertEquals("Assert the Service binding is made", 1, componentGraph
+        .getBindingNodes());
+
   }
 
 }
