@@ -16,6 +16,8 @@ public interface BindingNode {
    */
   InterfaceNode getFrom();
 
+  void setFrom(InterfaceNode from);
+
   /**
    * @return The target server interface which can match the signature requested
    *         by the the client interface in the <code>getFrom()</code>.
