@@ -1,6 +1,7 @@
 
 package org.objectweb.fractal.fractalizer;
 
+import org.objectweb.fractal.fractalizer.graph.BindingNode;
 import org.objectweb.fractal.fractalizer.graph.ComponentGraph;
 import org.objectweb.fractal.fractalizer.graph.InterfaceNode;
 import org.objectweb.fractal.fractalizer.graph.PrimitiveComponentNode;
@@ -32,4 +33,9 @@ public interface ADLWriterGraphVisitor {
   void accept(PrimitiveComponentNode primitive);
 
   void accept(InterfaceNode interfaceNode);
+
+  /**
+   * @param bindingNodeImpl
+   */
+  void accept(BindingNode bindingNodeImpl);
 }

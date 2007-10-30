@@ -18,9 +18,11 @@ public class PrimitiveComponentNodeImpl implements PrimitiveComponentNode {
   private final Set<InterfaceNode> clientInterfaces;
 
   private String                   implementation;
+  private final String             name;
 
   public PrimitiveComponentNodeImpl(final String implementation) {
     this.implementation = implementation;
+    this.name = implementation.substring(0, implementation.lastIndexOf("."));
     this.serverInterfaces = new HashSet<InterfaceNode>();
     this.clientInterfaces = new HashSet<InterfaceNode>();
   }
@@ -78,5 +80,12 @@ public class PrimitiveComponentNodeImpl implements PrimitiveComponentNode {
 
     v.accept(this);
 
+  }
+
+  /**
+   * @see org.objectweb.fractal.fractalizer.graph.PrimitiveComponentNode#getName()
+   */
+  public String getName() {
+    return this.name;
   }
 }
