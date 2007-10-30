@@ -11,6 +11,9 @@ import java.util.Set;
  */
 public interface BindingNode {
 
+  /**
+   * @return the origin edge of this binding.
+   */
   InterfaceNode getFrom();
 
   /**
