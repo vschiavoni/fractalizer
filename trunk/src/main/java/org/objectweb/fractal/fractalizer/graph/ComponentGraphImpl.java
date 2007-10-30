@@ -23,10 +23,11 @@ import org.objectweb.fractal.fractalizer.ADLWriterGraphVisitor;
 public class ComponentGraphImpl implements ComponentGraph {
 
   private final Map<String, PrimitiveComponentNode> components;
+  private final Set<BindingNode>                    bindings;
 
   public ComponentGraphImpl() {
     this.components = new HashMap<String, PrimitiveComponentNode>();
-
+    this.bindings = new HashSet<BindingNode>();
   }
 
   /*
@@ -96,7 +97,7 @@ public class ComponentGraphImpl implements ComponentGraph {
    * @see org.objectweb.fractal.fractalizer.graph.ComponentGraph#addBindingNode(org.objectweb.fractal.fractalizer.graph.BindingNode)
    */
   public void addBindingNode(final BindingNode bindingNode) {
-    throw new UnsupportedOperationException("NOT IMPLEMENTED YET");
+    this.bindings.add(bindingNode);
   }
 
   /*
@@ -105,7 +106,7 @@ public class ComponentGraphImpl implements ComponentGraph {
    * @see org.objectweb.fractal.fractalizer.graph.ComponentGraph#getBindingNodes()
    */
   public Set<BindingNode> getBindingNodes() {
-    throw new UnsupportedOperationException("NOT IMPLEMENTED YET");
+    return this.bindings;
   }
 
 }
