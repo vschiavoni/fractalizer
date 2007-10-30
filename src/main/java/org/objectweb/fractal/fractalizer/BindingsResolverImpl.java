@@ -4,6 +4,7 @@
 
 package org.objectweb.fractal.fractalizer;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import org.objectweb.fractal.fractalizer.graph.BindingNode;
@@ -57,7 +58,12 @@ public class BindingsResolverImpl implements BindingsResolver {
                   + clientInterface);
         } else {
           for (final InterfaceNode target : possibileTos) {
-            bindingNode.addPossibleTo(target);
+
+            /* if the two interfaces do not belong to the same component :-) */
+            if (target.getOwner() != clientInterface.getOwner()) {
+              bindingNode.addPossibleTo(target);
+            }
+
           }
         }
 
@@ -67,11 +73,41 @@ public class BindingsResolverImpl implements BindingsResolver {
     }
   }
 
+  /**
+   * @param componentGraph the ComponentGraph
+   * @param requiredProvidedInterfaceSignature the type of the server interfaces
+   *            to be returned
+   * @return a Set of InterfaceNode whose signature is the same type or a
+   *         subtype of the requiredProvidedInterfaceSignature
+   */
   protected Set<InterfaceNode> findCompatibleServerInterfaceNodes(
       final ComponentGraph componentGraph,
       final Class<?> requiredProvidedInterfaceSignature) {
 
-    throw new UnsupportedOperationException("NOT IMPLEMENTED YET");
+    final Set<InterfaceNode> result = new HashSet<InterfaceNode>();
+
+    // TODO make it more efficient, eventually adjusting the ComponentGraph
+    // interface to provide more convient methods and/or using better internal
+    // organization of the data structure of the ComponentGraph concrete
+    // implementation.
+
+    for (final PrimitiveComponentNode component : componentGraph
+        .getPrimitiveComponentNodes()) {
+
+      for (final InterfaceNode serverInterface : component
+          .getServerInterfaces()) {
+
+        /* if the serverInterface is compatible */
+        if (requiredProvidedInterfaceSignature.isAssignableFrom(serverInterface
+            .getSignature())) {
+          result.add(serverInterface);
+        }
+      }
+    }
+
+    /* the result could eventually be empty */
+    return result;
+
   }
 
 }

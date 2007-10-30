@@ -51,8 +51,8 @@ public class BindingResolverImplTest {
 
     final PrimitiveComponentNode serviceImpl = new PrimitiveComponentNodeImpl(
         concreteImplementation.getCanonicalName());
-    serviceImpl.addServerInterface(new InterfaceNodeImpl(
-        serviceImpl, "service", Service.class));
+    serviceImpl.addServerInterface(new InterfaceNodeImpl(serviceImpl,
+        "service", Service.class));
 
     return serviceImpl;
   }
@@ -73,7 +73,7 @@ public class BindingResolverImplTest {
     this.bindingResolver.resolveBindings(componentGraph);
 
     assertEquals("Assert the Service binding is made", 1, componentGraph
-        .getBindingNodes());
+        .getBindingNodes().size());
 
   }
 
