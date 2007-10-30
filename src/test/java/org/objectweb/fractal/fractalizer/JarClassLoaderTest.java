@@ -43,13 +43,13 @@ public class JarClassLoaderTest {
 
   /**
    * Test method for
-   * {@link org.objectweb.fractal.fractalizer.JarClassLoader#createJarClassLaoderFromFileWithName(java.lang.String)}.
+   * {@link org.objectweb.fractal.fractalizer.JarClassLoader#createJarClassLoaderFromFileWithName(java.lang.String)}.
    */
   @Test
   public void testCreateJarClassLaoderFromString() {
     try {
       cl = JarClassLoader
-          .createJarClassLaoderFromFileWithName(FIXTURES_PATH_JAR);
+          .createJarClassLoaderFromFileWithName(FIXTURES_PATH_JAR);
       checkClassLoader(cl);
     } catch (final JarClassLoaderException e) {
 
@@ -64,7 +64,7 @@ public class JarClassLoaderTest {
    */
   @Test
   public void testGetAllClasses() throws JarClassLoaderException {
-    cl = JarClassLoader.createJarClassLaoderFromFileWithName(FIXTURES_PATH_JAR);
+    cl = JarClassLoader.createJarClassLoaderFromFileWithName(FIXTURES_PATH_JAR);
     final Set<Class<?>> allClasses = cl.getAllclasses();
     assertNotNull(allClasses);
     assertTrue(allClasses.size() > 0);
