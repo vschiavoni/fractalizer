@@ -20,6 +20,7 @@ public class ComponentGraphImpl implements ComponentGraph {
 
   public ComponentGraphImpl() {
     this.components = new HashMap<String, PrimitiveComponentNode>();
+
   }
 
   /*
@@ -77,6 +78,24 @@ public class ComponentGraphImpl implements ComponentGraph {
   public void accept(final ADLWriterGraphVisitor v) {
     v.accept(this);
 
+  }
+
+  /*
+   * (non-Javadoc)
+   * 
+   * @see org.objectweb.fractal.fractalizer.graph.ComponentGraph#addBindingNode(org.objectweb.fractal.fractalizer.graph.BindingNode)
+   */
+  public void addBindingNode(final BindingNode bindingNode) {
+    throw new UnsupportedOperationException("NOT IMPLEMENTED YET");
+  }
+
+  /*
+   * (non-Javadoc)
+   * 
+   * @see org.objectweb.fractal.fractalizer.graph.ComponentGraph#getBindingNodes()
+   */
+  public Set<BindingNode> getBindingNodes() {
+    throw new UnsupportedOperationException("NOT IMPLEMENTED YET");
   }
 
 }

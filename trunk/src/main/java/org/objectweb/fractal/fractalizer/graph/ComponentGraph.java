@@ -29,6 +29,16 @@ public interface ComponentGraph extends Visitable {
       String implementation) throws ComponentNotFoundException;
 
   /**
+   * @return the {@link BindingNode}s that have been found.
+   */
+  Set<BindingNode> getBindingNodes();
+
+  /**
+   * @param bindingNode the binding to add to this <code>ComponentGraph</code>.
+   */
+  void addBindingNode(BindingNode bindingNode);
+
+  /**
    * Empty the graph, removing every node.
    */
   void empty();
