@@ -103,7 +103,7 @@ public class ClassVisitorTest {
     visitor.visit(Service.class);
     visitor.visit(ServiceImpl.class);
     final ComponentGraph graph = visitor.getComponentGraph();
-    checkTotalNodesInGraph(graph, 2);
+    checkTotalNodesInGraph(graph, 1);
   }
 
   @Test
@@ -111,13 +111,13 @@ public class ClassVisitorTest {
     visitor.visit(new Class[]{Service.class, ServiceImpl.class});
 
     final ComponentGraph graph = visitor.getComponentGraph();
-    checkTotalNodesInGraph(graph, 2);
+    checkTotalNodesInGraph(graph, 1);
   }
 
   @Test
   public void testVisitTwiceSameClass() {
-    visitor.visit(Service.class);
-    visitor.visit(Service.class);
+    visitor.visit(ServiceImpl.class);
+    visitor.visit(ServiceImpl.class);
     final ComponentGraph graph = visitor.getComponentGraph();
     checkTotalNodesInGraph(graph, 1);
   }
