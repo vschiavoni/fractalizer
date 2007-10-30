@@ -36,31 +36,33 @@ public class ClassVisitorImpl implements ClassVisitor {
    */
   public void visit(final Class<?> clazz) {
 
-    final PrimitiveComponentNode primitive = factory
-        .createPrimitiveComponentNodeForImplName(clazz.getCanonicalName());
+    if (!clazz.isInterface()) {
 
-    for (final Class<?> itf : clazz.getInterfaces()) {
-      final String itfName = itf.getSimpleName();
-      final String itfSign = itf.getCanonicalName();
-      primitive.addServerInterface(factory.createServerInterface(primitive,
-          itfName, itfSign));
+      final PrimitiveComponentNode primitive = factory
+          .createPrimitiveComponentNodeForImplName(clazz.getCanonicalName());
+
+      for (final Class<?> itf : clazz.getInterfaces()) {
+        final String itfName = itf.getSimpleName();
+        final String itfSign = itf.getCanonicalName();
+        primitive.addServerInterface(factory.createServerInterface(primitive,
+            itfName, itfSign));
+      }
+
+      final Field[] fields = clazz.getDeclaredFields(); // potential
+      // client-interfaces
+      for (final Field f : fields) {
+        final String clientItfType = f.getType().getCanonicalName();
+        log.info("Field class type: " + clientItfType);
+        final String clientItfName = f.getName();
+        log.info("Field name: " + clientItfName);
+
+        primitive.addClientInterface(factory.createClientInterface(primitive,
+            clientItfName, clientItfType));
+
+      }
+
+      this.componentGraph.addPrimitiveComponentNode(primitive);
     }
-
-    final Field[] fields = clazz.getDeclaredFields(); // potential
-    // client-interfaces
-    for (final Field f : fields) {
-      final String clientItfType = f.getType().getCanonicalName();
-      log.info("Field class type: " + clientItfType);
-      final String clientItfName = f.getName();
-      log.info("Field name: " + clientItfName);
-
-      primitive.addClientInterface(factory.createClientInterface(primitive,
-          clientItfName, clientItfType));
-
-    }
-
-    this.componentGraph.addPrimitiveComponentNode(primitive);
-
   }
 
   /**
