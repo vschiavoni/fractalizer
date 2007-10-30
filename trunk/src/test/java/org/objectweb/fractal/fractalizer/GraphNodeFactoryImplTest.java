@@ -1,6 +1,3 @@
-/**
- * Author: Valerio Schiavoni <valerio.schiavoni@gmail.com>
- */
 
 package org.objectweb.fractal.fractalizer;
 
@@ -11,9 +8,6 @@ import org.junit.Test;
 import org.objectweb.fractal.fractalizer.graph.GraphNodeFactory;
 import org.objectweb.fractal.fractalizer.graph.GraphNodeFactoryImpl;
 
-/**
- * @author Valerio Schiavoni <valerio.schiavoni@gmail.com>
- */
 public class GraphNodeFactoryImplTest {
 
   GraphNodeFactory factory;

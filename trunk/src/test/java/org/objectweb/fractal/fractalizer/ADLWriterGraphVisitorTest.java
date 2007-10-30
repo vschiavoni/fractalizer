@@ -1,19 +1,16 @@
-/**
- * Author: Valerio Schiavoni <valerio.schiavoni@gmail.com>
- */
 
 package org.objectweb.fractal.fractalizer;
 
-import org.custommonkey.xmlunit.XMLTestCase;
-import org.junit.After;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+
+import java.util.logging.Logger;
+
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.objectweb.fractal.fractalizer.fixtures.Client;
 import org.objectweb.fractal.fractalizer.graph.ComponentGraph;
-
-import java.util.logging.Logger;
 
 /**
  * Test the ADLWriter
@@ -28,7 +25,6 @@ public class ADLWriterGraphVisitorTest {
   ComponentGraph         theGraph;
 
   protected ClassVisitor visitor;
-
 
   /**
    * @throws java.lang.Exception
@@ -56,15 +52,13 @@ public class ADLWriterGraphVisitorTest {
   }
 
   @Test
-  public void rootDefinitionHasNameValue(){
-      visitor.visit(Client.class);
-          theGraph = visitor.getComponentGraph();
+  public void rootDefinitionHasNameValue() {
+    visitor.visit(Client.class);
+    theGraph = visitor.getComponentGraph();
 
-          final String xml = writer.visit(theGraph);
-
-      
-
-
+    final String xml = writer.visit(theGraph);
+    assertNotNull(xml);
+    // write more tests
   }
 
   /**

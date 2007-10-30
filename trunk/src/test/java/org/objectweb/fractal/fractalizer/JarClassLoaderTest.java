@@ -1,6 +1,3 @@
-/**
- * Author: Valerio Schiavoni <valerio.schiavoni@gmail.com>
- */
 
 package org.objectweb.fractal.fractalizer;
 
@@ -17,9 +14,6 @@ import org.junit.Test;
 import org.objectweb.fractal.fractalizer.JarClassLoader.JarClassLoaderException;
 import org.objectweb.fractal.fractalizer.fixtures.Client;
 
-/**
- * @author Valerio Schiavoni <valerio.schiavoni@gmail.com>
- */
 public class JarClassLoaderTest {
 
   private static final String FIXTURES_PATH_JAR = "src/test/resources/fixtures.jar";
