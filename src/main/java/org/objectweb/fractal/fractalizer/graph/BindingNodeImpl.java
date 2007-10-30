@@ -7,6 +7,8 @@ package org.objectweb.fractal.fractalizer.graph;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.objectweb.fractal.fractalizer.ADLWriterGraphVisitor;
+
 /**
  * @author Valerio Schiavoni <valerio.schiavoni@gmail.com>.
  */
@@ -43,6 +45,13 @@ public class BindingNodeImpl implements BindingNode {
 
   public void setFrom(final InterfaceNode from) {
     this.from = from;
+  }
+
+  /**
+   * @see org.objectweb.fractal.fractalizer.graph.Visitable#accept(org.objectweb.fractal.fractalizer.ADLWriterGraphVisitor)
+   */
+  public void accept(final ADLWriterGraphVisitor v) {
+    v.accept(this);
   }
 
 }

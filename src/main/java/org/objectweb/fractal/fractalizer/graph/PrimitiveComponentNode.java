@@ -29,4 +29,6 @@ public interface PrimitiveComponentNode extends Visitable {
   Set<InterfaceNode> getClientInterfaces();
 
   void addClientInterface(InterfaceNode interfaceNode);
+
+  public String getName();
 }

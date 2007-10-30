@@ -1,6 +1,7 @@
 
 package org.objectweb.fractal.fractalizer;
 
+import org.objectweb.fractal.fractalizer.graph.BindingNode;
 import org.objectweb.fractal.fractalizer.graph.ComponentGraph;
 import org.objectweb.fractal.fractalizer.graph.InterfaceNode;
 import org.objectweb.fractal.fractalizer.graph.PrimitiveComponentNode;
@@ -73,6 +74,7 @@ public class ADLWriterGraphVisitorImpl implements ADLWriterGraphVisitor {
 
     builder.append("<content class='" + primitive.getPrimitiveImplementation()
         + "'/>\n");
+
     builder.append("<controller desc='primitive'/>\n");
     builder.append("</component>\n");
   }
@@ -93,4 +95,14 @@ public class ADLWriterGraphVisitorImpl implements ADLWriterGraphVisitor {
     return role;
   }
 
+  /**
+   * @see org.objectweb.fractal.fractalizer.ADLWriterGraphVisitor#accept(org.objectweb.fractal.fractalizer.graph.BindingNode)
+   */
+  public void accept(final BindingNode bindingNodeImpl) {
+
+    final InterfaceNode from = bindingNodeImpl.getFrom();
+    builder.append("<binding from='" + from.getOwner().getName() + "."
+        + from.getName() + " to='" + "' />\n");
+
+  }
 }

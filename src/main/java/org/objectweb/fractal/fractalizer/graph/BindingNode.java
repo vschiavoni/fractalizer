@@ -9,7 +9,7 @@ import java.util.Set;
 /**
  * @author Alessio Pace, Valerio Schiavoni
  */
-public interface BindingNode {
+public interface BindingNode extends Visitable {
 
   /**
    * @return the origin edge of this binding.
