@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
+import org.objectweb.fractal.fractalizer.JarClassLoader.JarClassLoaderException;
 
 /**
  * Fractalizer is a best-effort tool to automatically transform an
@@ -25,34 +26,24 @@ public class Fractalizer {
   public String fractalize(final String jarName) {
     final ClassVisitor visitor = new ClassVisitorImpl();
 
-    final JarClassLoader jarLoader = new JarClassLoader(jarName);
+    JarClassLoader jarLoader = null;
+    try {
+      jarLoader = JarClassLoader.createJarClassLaoderFromFileWithName(jarName);
+    } catch (final JarClassLoaderException e) {
+      e.printStackTrace();
+    }
 
-    for (final String clazz : jarLoader.classes()) {
-      if (!clazz.endsWith(".class")) {
-        if (debug) {
-          System.err.println("Skipping file: " + clazz);
-        }
-        continue;
+    for (final Class<?> clazz : jarLoader.getAllclasses()) {
+      if (debug) {
+        System.err.println("Class under visit: " + clazz.getCanonicalName());
       }
-      try {
-        if (debug) {
-          System.err.println("Loading: " + clazz);
-        }
-        final Class<?> c = jarLoader.loadClass(clazz, true); // true to resolve
-                                                              // the class,
-                                                              // required to use
-                                                              // it.
-        visitor.visit(c);
-      } catch (final ClassNotFoundException e) {
-        System.err.println("Could not load class with name: " + clazz);
-        e.printStackTrace();
-
-      }
+      visitor.visit(clazz);
     }
 
     final ADLWriterGraphVisitor writer = new ADLWriterGraphVisitorImpl();
 
     return writer.visit(visitor.getComponentGraph());
+
   }
 
   public void writeAdlOn(final String adlContent, final String adlFileName)
