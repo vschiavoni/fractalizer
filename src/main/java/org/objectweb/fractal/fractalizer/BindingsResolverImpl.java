@@ -6,6 +6,7 @@ package org.objectweb.fractal.fractalizer;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.logging.Logger;
 
 import org.objectweb.fractal.fractalizer.graph.BindingNode;
 import org.objectweb.fractal.fractalizer.graph.BindingNodeImpl;
@@ -17,6 +18,8 @@ import org.objectweb.fractal.fractalizer.graph.PrimitiveComponentNode;
  * @author Alessio Pace
  */
 public class BindingsResolverImpl implements BindingsResolver {
+
+  Logger logger = Logger.getLogger(this.getClass().getCanonicalName());
 
   /*
    * (non-Javadoc)
@@ -63,7 +66,6 @@ public class BindingsResolverImpl implements BindingsResolver {
             if (target.getOwner() != clientInterface.getOwner()) {
               bindingNode.addPossibleTo(target);
             }
-
           }
         }
 
@@ -100,6 +102,7 @@ public class BindingsResolverImpl implements BindingsResolver {
         /* if the serverInterface is compatible */
         if (requiredProvidedInterfaceSignature.isAssignableFrom(serverInterface
             .getSignature())) {
+
           result.add(serverInterface);
         }
       }
