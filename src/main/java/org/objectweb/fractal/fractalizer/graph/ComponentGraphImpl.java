@@ -35,7 +35,11 @@ public class ComponentGraphImpl implements ComponentGraph {
    * @see org.objectweb.fractal.fractalizer.graph.ComponentGraph#addPrimitiveComponentNode(org.objectweb.fractal.fractalizer.graph.PrimitiveComponentNode)
    */
   public void addPrimitiveComponentNode(final PrimitiveComponentNode node) {
-    components.put(node.getPrimitiveImplementation(), node);
+    if (node == null) {
+      throw new IllegalArgumentException("PrimitiveComponentNode can't be null");
+    }
+    final String primitiveImplementation = node.getPrimitiveImplementation();
+    components.put(primitiveImplementation, node);
 
   }
 
