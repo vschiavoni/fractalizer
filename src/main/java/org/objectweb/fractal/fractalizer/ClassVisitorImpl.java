@@ -36,6 +36,7 @@ public class ClassVisitorImpl implements ClassVisitor {
    */
   public void visit(final Class<?> clazz) {
 
+    /* if it is not an interface it is a candidate to be a primitive component */
     if (!clazz.isInterface()) {
 
       final PrimitiveComponentNode primitive = factory
@@ -43,15 +44,14 @@ public class ClassVisitorImpl implements ClassVisitor {
 
       for (final Class<?> itf : clazz.getInterfaces()) {
         final String itfName = itf.getSimpleName();
-        final String itfSign = itf.getCanonicalName();
         primitive.addServerInterface(factory.createServerInterface(primitive,
-            itfName, itfSign));
+            itfName, itf));
       }
 
       final Field[] fields = clazz.getDeclaredFields(); // potential
       // client-interfaces
       for (final Field f : fields) {
-        final String clientItfType = f.getType().getCanonicalName();
+        final Class<?> clientItfType = f.getType();
         log.info("Field class type: " + clientItfType);
         final String clientItfName = f.getName();
         log.info("Field name: " + clientItfName);
