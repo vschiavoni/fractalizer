@@ -8,13 +8,13 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * @author Valerio Schiavoni <valerio.schiavoni@gmail.com>
+ * @author Valerio Schiavoni <valerio.schiavoni@gmail.com>.
  */
 public class BindingNodeImpl implements BindingNode {
 
-  Set<InterfaceNode> possibleTos;
+  private final Set<InterfaceNode> possibleTos;
 
-  InterfaceNode      from;
+  private InterfaceNode            from;
 
   public BindingNodeImpl() {
     this.possibleTos = new HashSet<InterfaceNode>();
