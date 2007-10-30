@@ -6,12 +6,15 @@ package org.objectweb.fractal.fractalizer;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.ArrayList;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.objectweb.fractal.fractalizer.fixtures.Client;
 import org.objectweb.fractal.fractalizer.fixtures.Service;
 import org.objectweb.fractal.fractalizer.fixtures.ServiceImpl;
 import org.objectweb.fractal.fractalizer.fixtures.ServiceImpl2;
+import org.objectweb.fractal.fractalizer.graph.BindingNode;
 import org.objectweb.fractal.fractalizer.graph.ComponentGraph;
 import org.objectweb.fractal.fractalizer.graph.ComponentGraphImpl;
 import org.objectweb.fractal.fractalizer.graph.InterfaceNodeImpl;
@@ -86,10 +89,20 @@ public class BindingResolverImplTest {
     final PrimitiveComponentNode serviceImpl2 = createServiceImplComponent(ServiceImpl2.class);
     this.componentGraph.addPrimitiveComponentNode(serviceImpl2);
 
+    assertEquals("Assert number of components", 3, componentGraph
+        .getPrimitiveComponentNodes().size());
+
     this.bindingResolver.resolveBindings(componentGraph);
 
-    assertEquals("Assert there are 2 possible matching server interfaces", 2,
-        componentGraph.getBindingNodes().size());
+    assertEquals("Assert number of BindingNodes", 1, componentGraph
+        .getBindingNodes().size());
+
+    final BindingNode bindingNode = new ArrayList<BindingNode>(
+        this.componentGraph.getBindingNodes()).get(0);
+
+    assertEquals("Assert number of possible matching server interfaces", 2,
+        bindingNode.getPossibleTos().size());
+
   }
 
 }
