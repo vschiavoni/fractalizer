@@ -13,7 +13,7 @@ public class InterfaceNodeImpl implements InterfaceNode {
 
   private final PrimitiveComponentNode owner;
   private final String                 name;
-  private final String                 signature;
+  private final Class<?>               signature;
   private final Boolean                isClient;
 
   /**
@@ -24,7 +24,7 @@ public class InterfaceNodeImpl implements InterfaceNode {
    * @param signature the signature, that is its runtime type
    */
   public InterfaceNodeImpl(final PrimitiveComponentNode owner,
-      final String name, final String signature) {
+      final String name, final Class<?> signature) {
     this(owner, name, signature, true);
   }
 
@@ -36,7 +36,7 @@ public class InterfaceNodeImpl implements InterfaceNode {
    *            otherwise.
    */
   public InterfaceNodeImpl(final PrimitiveComponentNode owner,
-      final String name, final String signature, final Boolean isClient) {
+      final String name, final Class<?> signature, final Boolean isClient) {
     this.owner = owner;
     this.name = name;
     this.signature = signature;
@@ -66,13 +66,13 @@ public class InterfaceNodeImpl implements InterfaceNode {
    * 
    * @see org.objectweb.fractal.fractalizer.graph.InterfaceNode#getSignature()
    */
-  public String getSignature() {
+  public Class<?> getSignature() {
     return this.signature;
   }
 
   public Boolean isClient() {
     return this.isClient; // To change body of implemented methods use File |
-                          // Settings | File Templates.
+    // Settings | File Templates.
   }
 
   @Override

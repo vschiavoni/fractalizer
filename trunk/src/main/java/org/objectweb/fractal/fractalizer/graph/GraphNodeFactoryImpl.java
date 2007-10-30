@@ -39,7 +39,7 @@ public class GraphNodeFactoryImpl implements GraphNodeFactory {
    */
   public InterfaceNode createClientInterface(
       final PrimitiveComponentNode owner, final String name,
-      final String signature) {
+      final Class<?> signature) {
     return new InterfaceNodeImpl(owner, name, signature, true);
   }
 
@@ -53,7 +53,7 @@ public class GraphNodeFactoryImpl implements GraphNodeFactory {
    */
   public InterfaceNode createServerInterface(
       final PrimitiveComponentNode owner, final String name,
-      final String signature) {
+      final Class<?> signature) {
     return new InterfaceNodeImpl(owner, name, signature, false);
   }
 

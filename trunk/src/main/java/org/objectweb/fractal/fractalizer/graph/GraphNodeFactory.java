@@ -27,7 +27,7 @@ public interface GraphNodeFactory {
    * @return the created client interface
    */
   InterfaceNode createClientInterface(PrimitiveComponentNode owner,
-      String name, String signature);
+      String name, Class<?> signature);
 
   /**
    * Create a server interface
@@ -38,6 +38,6 @@ public interface GraphNodeFactory {
    * @return the created server interface
    */
   InterfaceNode createServerInterface(PrimitiveComponentNode owner,
-      String name, String signature);
+      String name, Class<?> signature);
 
 }
