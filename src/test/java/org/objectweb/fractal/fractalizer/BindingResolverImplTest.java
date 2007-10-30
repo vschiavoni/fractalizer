@@ -11,6 +11,7 @@ import org.junit.Test;
 import org.objectweb.fractal.fractalizer.fixtures.Client;
 import org.objectweb.fractal.fractalizer.fixtures.Service;
 import org.objectweb.fractal.fractalizer.fixtures.ServiceImpl;
+import org.objectweb.fractal.fractalizer.fixtures.ServiceImpl2;
 import org.objectweb.fractal.fractalizer.graph.ComponentGraph;
 import org.objectweb.fractal.fractalizer.graph.ComponentGraphImpl;
 import org.objectweb.fractal.fractalizer.graph.InterfaceNodeImpl;
@@ -72,9 +73,23 @@ public class BindingResolverImplTest {
     this.componentGraph.addPrimitiveComponentNode(serviceImpl);
     this.bindingResolver.resolveBindings(componentGraph);
 
-    assertEquals("Assert the Service binding is made", 1, componentGraph
-        .getBindingNodes().size());
+    assertEquals("Assert there is one matching server interface", 1,
+        componentGraph.getBindingNodes().size());
 
+  }
+
+  @Test
+  public final void testResolveBindingsWithOneClientComponentAndTwoMatchingServerComponents() {
+    final PrimitiveComponentNode serviceImpl = createServiceImplComponent(ServiceImpl.class);
+    this.componentGraph.addPrimitiveComponentNode(serviceImpl);
+
+    final PrimitiveComponentNode serviceImpl2 = createServiceImplComponent(ServiceImpl2.class);
+    this.componentGraph.addPrimitiveComponentNode(serviceImpl2);
+
+    this.bindingResolver.resolveBindings(componentGraph);
+
+    assertEquals("Assert there are 2 possible matching server interfaces", 2,
+        componentGraph.getBindingNodes().size());
   }
 
 }
