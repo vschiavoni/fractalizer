@@ -12,6 +12,12 @@ import java.util.Set;
 import org.objectweb.fractal.fractalizer.ADLWriterGraphVisitor;
 
 /**
+ * ComponentGraph invariants:
+ * <ul>
+ * <li>there can't be more than one primitive component with the same
+ * implementation</li>
+ * </ul>.
+ * 
  * @author Alessio Pace, Valerio Schiavoni
  */
 public class ComponentGraphImpl implements ComponentGraph {
