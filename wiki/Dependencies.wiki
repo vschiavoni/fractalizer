@@ -1,0 +1,7 @@
+#summary The dependencies of Fractalizer
+
+= Dependency Graph =
+
+The following graph has been realized using the [http://code.google.com/p/q4e/ Q4E] Maven plugin.
+
+http://farm3.static.flickr.com/2004/1808145632_f70eabaeb9_o.jpg
