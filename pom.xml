@@ -15,11 +15,52 @@
       <email>alessio.pace@gmail.com</email>
     </developer>
   </developers>
+  
+  
+  <distributionManagement>
+    <repository>
+      <id>code.google.com</id>
+      <name>Google Code Repository</name>
+      <url>dav:https://fractalizer.googlecode.com/svn/repository/releases</url>
+    </repository>
+    <snapshotRepository>
+      <id>code.google.com</id>
+      <name>Google Code Snapshot Repository</name>
+      <url>dav:https://fractalizer.googlecode.com/svn/repository/snapshots</url>
+    </snapshotRepository>
+  </distributionManagement>
+  
+  
+  <pluginRepositories>
+    <pluginRepository>
+      <id>apache.org</id>
+      <name>Apache Snapshot Repository</name>
+      <url>http://people.apache.org/repo/m2-snapshot-repository</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </pluginRepository>
+   
+  </pluginRepositories>
+  
   <properties>
         <fractalizer.mainclass>org.objectweb.fractal.fractalizer.Fractalizer</fractalizer.mainclass>
     </properties>
   
   <build>
+  	<!-- to deploy artifacts directly on codegoogle -->
+  	<extensions>
+      <extension>
+        <groupId>org.apache.maven.wagon</groupId>
+        <artifactId>wagon-webdav</artifactId>
+        <version>1.0-beta-2</version>
+      </extension>
+    </extensions>
+  	
+  
     <plugins>
     	<plugin>
     		<artifactId>maven-compiler-plugin</artifactId>
@@ -41,7 +82,9 @@
     					<mainClass>${fractalizer.mainclass}</mainClass>
     				</manifest>
     			</archive>
-    			<finalName>${project.artifactId}</finalName>
+    			<finalName>${project.artifactId}-${project.version}</finalName>
+    			<attach>false</attach> <!-- otherwise assembly doesn't work with the choosen finalName -->
+    			<appendAssemblyId>false</appendAssemblyId>
     			<outputDirectory>target/assembly</outputDirectory>
     			<workDirectory>target/assembly/work</workDirectory>
     		</configuration>
@@ -53,7 +96,7 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.4</version>
+      <version>4.3</version>
       <scope>test</scope>
     </dependency>
     <dependency>
