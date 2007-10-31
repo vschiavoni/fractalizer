@@ -16,7 +16,7 @@ import org.objectweb.fractal.fractalizer.graph.PrimitiveComponentNode;
 public class ADLWriterGraphVisitorImpl implements ADLWriterGraphVisitor {
 
   private static final String STANDARD_DTD_HEADER = "<?xml version=\"1.0\" encoding=\"ISO-8859-1\" ?>\n"
-                                                      + "<!DOCTYPE definition PUBLIC \"-//objectweb.org//DTD Fractal ADL 2.0//EN\" \"classpath://org/objectweb/fractal/bf/adl/xml/standard.dtd\">\n";
+                                                      + "<!DOCTYPE definition PUBLIC \"-//objectweb.org//DTD Fractal ADL 2.0//EN\" \"classpath://org/objectweb/fractal/adl/xml/standard.dtd\">\n";
 
   /**
    * The string builder.
