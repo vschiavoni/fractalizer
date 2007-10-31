@@ -22,15 +22,12 @@ public class ClassVisitorImpl implements ClassVisitor {
 
   private final ComponentGraph   componentGraph;
   private final GraphNodeFactory factory;
-  private final BindingsResolver bindingResolver;
 
   public ClassVisitorImpl() {
 
     this.componentGraph = new ComponentGraphImpl();
 
     this.factory = new GraphNodeFactoryImpl();
-
-    this.bindingResolver = new BindingsResolverImpl();
 
   }
 
@@ -71,8 +68,6 @@ public class ClassVisitorImpl implements ClassVisitor {
       this.componentGraph.addPrimitiveComponentNode(primitive);
     }
 
-    log.info("Launching binding resolution step...");
-    // bindingResolver.resolveBindings(this.componentGraph);
   }
 
   /**
