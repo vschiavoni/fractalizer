@@ -3,7 +3,7 @@
   <groupId>org.objectweb.fractal</groupId>
   <artifactId>fractalizer</artifactId>
   <name>Fractalizer</name>
-  <version>0.1-SNAPSHOT</version>
+  <version>0.1.1-SNAPSHOT</version>
   <description>Fractalizer is able to fractalize simple Java applications</description>
   <developers>
     <developer>
