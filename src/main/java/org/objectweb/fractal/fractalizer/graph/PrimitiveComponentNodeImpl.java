@@ -27,8 +27,7 @@ public class PrimitiveComponentNodeImpl implements PrimitiveComponentNode {
 
   public PrimitiveComponentNodeImpl(final String implementation) {
     this.implementation = implementation;
-    this.name = implementation.substring(implementation.lastIndexOf(".") + 1,
-        implementation.length());
+    this.name = implementation.replace('.', '_');
     this.serverInterfaces = new HashSet<InterfaceNode>();
     this.clientInterfaces = new HashSet<InterfaceNode>();
   }
