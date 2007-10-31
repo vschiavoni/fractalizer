@@ -108,13 +108,21 @@ public class ADLWriterGraphVisitorImpl implements ADLWriterGraphVisitor {
 
     final Set<InterfaceNode> possibleTos = bindingNodeImpl.getPossibleTos();
 
-    if (possibleTos.size() > 1) {
-      throw new RuntimeException(
-          "Impossible to serialize a binding node with more than 1 possible target node (binding resolution step not executed yet?)");
-    }
+    boolean first = true;
 
-    builder.append("<binding from='" + from.getOwner().getName() + "."
-        + from.getName() + "' to='" + "' />\n");
+    for (final InterfaceNode to : possibleTos) {
+      if (first) {
+        builder.append("<binding from='" + from.getOwner().getName() + "."
+            + from.getName() + "' to='" + to.getOwner().getName() + "."
+            + to.getName() + "' />\n");
+        first = false; // no other firsts..
+      } else {
+        // these are commented
+        builder.append("<!-- <binding from='" + from.getOwner().getName() + "."
+            + from.getName() + "' to='" + to.getOwner().getName() + "."
+            + to.getName() + "' /> --> \n");
+      }
+    }
 
   }
 }
