@@ -43,7 +43,7 @@ public class ADLWriterGraphVisitorTest {
     theGraph = visitor.getComponentGraph();
 
     final String xml = writer.visit(theGraph);
-
+    assertNotNull(theGraph);
     print(xml);
 
     assertNotNull(xml);
