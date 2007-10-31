@@ -54,10 +54,14 @@ public class ClassVisitorImpl implements ClassVisitor {
       final Field[] fields = clazz.getDeclaredFields(); // potential
       // client-interfaces
       for (final Field f : fields) {
+        if (f.getClass().isPrimitive()) {
+          // go to next field
+          continue;
+        }
         final Class<?> clientItfType = f.getType();
-        log.info("Field class type: " + clientItfType);
+        log.fine("Field class type: " + clientItfType);
         final String clientItfName = f.getName();
-        log.info("Field name: " + clientItfName);
+        log.fine("Field name: " + clientItfName);
 
         primitive.addClientInterface(factory.createClientInterface(primitive,
             clientItfName, clientItfType));
