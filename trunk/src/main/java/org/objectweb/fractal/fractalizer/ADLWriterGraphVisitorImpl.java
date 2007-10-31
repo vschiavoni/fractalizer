@@ -50,7 +50,7 @@ public class ADLWriterGraphVisitorImpl implements ADLWriterGraphVisitor {
    * @see org.objectweb.fractal.fractalizer.ADLWriterGraphVisitor#accept(org.objectweb.fractal.fractalizer.graph.ComponentGraph)
    */
   public void accept(final ComponentGraph componentGraph) {
-    builder.append("<definition name='" + componentGraph.getName() + "' >\n");
+    builder.append("<definition name='" + rootDefinitionName + "' >\n");
 
     for (final PrimitiveComponentNode primitive : componentGraph
         .getPrimitiveComponentNodes()) {
