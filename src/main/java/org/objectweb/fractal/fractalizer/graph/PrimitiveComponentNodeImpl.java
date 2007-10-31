@@ -6,6 +6,7 @@ package org.objectweb.fractal.fractalizer.graph;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.logging.Logger;
 
 import org.objectweb.fractal.fractalizer.ADLWriterGraphVisitor;
 
@@ -13,6 +14,10 @@ import org.objectweb.fractal.fractalizer.ADLWriterGraphVisitor;
  * @author Alessio Pace, Valerio Schiavoni
  */
 public class PrimitiveComponentNodeImpl implements PrimitiveComponentNode {
+
+  Logger                           log = Logger
+                                           .getLogger(PrimitiveComponentNodeImpl.class
+                                               .getCanonicalName());
 
   private final Set<InterfaceNode> serverInterfaces;
   private final Set<InterfaceNode> clientInterfaces;
@@ -22,7 +27,8 @@ public class PrimitiveComponentNodeImpl implements PrimitiveComponentNode {
 
   public PrimitiveComponentNodeImpl(final String implementation) {
     this.implementation = implementation;
-    this.name = implementation.substring(0, implementation.lastIndexOf("."));
+    this.name = implementation.substring(implementation.lastIndexOf(".") + 1,
+        implementation.length());
     this.serverInterfaces = new HashSet<InterfaceNode>();
     this.clientInterfaces = new HashSet<InterfaceNode>();
   }

@@ -1,6 +1,8 @@
 
 package org.objectweb.fractal.fractalizer;
 
+import java.util.Set;
+
 import org.objectweb.fractal.fractalizer.graph.BindingNode;
 import org.objectweb.fractal.fractalizer.graph.ComponentGraph;
 import org.objectweb.fractal.fractalizer.graph.InterfaceNode;
@@ -55,6 +57,9 @@ public class ADLWriterGraphVisitorImpl implements ADLWriterGraphVisitor {
       primitive.accept(this);
     }
 
+    for (final BindingNode bn : componentGraph.getBindingNodes())
+      bn.accept(this);
+
     builder.append("</definition>");
   }
 
@@ -62,8 +67,7 @@ public class ADLWriterGraphVisitorImpl implements ADLWriterGraphVisitor {
    * @see org.objectweb.fractal.fractalizer.ADLWriterGraphVisitor#accept(org.objectweb.fractal.fractalizer.graph.PrimitiveComponentNode)
    */
   public void accept(final PrimitiveComponentNode primitive) {
-    builder.append("<component name='" + primitive.getPrimitiveImplementation()
-        + "'>\n");
+    builder.append("<component name='" + primitive.getName() + "'>\n");
 
     for (final InterfaceNode interfaceNode : primitive.getClientInterfaces()) {
       interfaceNode.accept(this);
@@ -101,8 +105,16 @@ public class ADLWriterGraphVisitorImpl implements ADLWriterGraphVisitor {
   public void accept(final BindingNode bindingNodeImpl) {
 
     final InterfaceNode from = bindingNodeImpl.getFrom();
+
+    final Set<InterfaceNode> possibleTos = bindingNodeImpl.getPossibleTos();
+
+    if (possibleTos.size() > 1) {
+      throw new RuntimeException(
+          "Impossible to serialize a binding node with more than 1 possible target node (binding resolution step not executed yet?)");
+    }
+
     builder.append("<binding from='" + from.getOwner().getName() + "."
-        + from.getName() + " to='" + "' />\n");
+        + from.getName() + "' to='" + "' />\n");
 
   }
 }
