@@ -29,7 +29,8 @@ public class PrimitiveComponentNodeImplTest {
   public void testPrimitiveComponentNodeImpl() {
     this.primitiveComp = new PrimitiveComponentNodeImpl(Client.class
         .getCanonicalName());
-    assertEquals("Client", primitiveComp.getName());
+    assertEquals("org_objectweb_fractal_fractalizer_fixtures_Client",
+        primitiveComp.getName());
   }
 
 }
